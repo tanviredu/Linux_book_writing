@@ -1,0 +1,199 @@
+%!Adobe-FontList 1.14
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Aleo-Bold
+FamilyName:Aleo
+StyleName:Bold
+FullName:Aleo Bold
+MenuName:Aleo
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp1\Document fonts\Aleo-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:243064
+FileModTime:1373262888
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Aleo-Light
+FamilyName:Aleo
+StyleName:Light
+FullName:Aleo Light
+MenuName:Aleo
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp1\Document fonts\Aleo-Light.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:220648
+FileModTime:1373262868
+WeightClass:300
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Aleo-Regular
+FamilyName:Aleo
+StyleName:Regular
+FullName:Aleo Regular
+MenuName:Aleo
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp1\Document fonts\Aleo-Regular_0.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:193172
+FileModTime:1373262870
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CenturyGothic
+FamilyName:Century Gothic
+StyleName:Regular
+FullName:Century Gothic
+MenuName:Century Gothic
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp1\Document fonts\GOTHIC.TTF
+DataFormat:sfntData
+FileLength:137568
+FileModTime:910859968
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:LibreBaskerville-Bold
+FamilyName:Libre Baskerville
+StyleName:Bold
+FullName:Libre Baskerville Bold
+MenuName:Libre Baskerville
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp1\Document fonts\LibreBaskerville-Bold.ttf
+DataFormat:sfntData
+FileLength:160652
+FileModTime:1354158422
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:LibreBaskerville-Italic
+FamilyName:Libre Baskerville
+StyleName:Italic
+FullName:Libre Baskerville Italic
+MenuName:Libre Baskerville
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp1\Document fonts\LibreBaskerville-Italic.ttf
+DataFormat:sfntData
+FileLength:195048
+FileModTime:1354158422
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:LibreBaskerville-Regular
+FamilyName:Libre Baskerville
+StyleName:Regular
+FullName:Libre Baskerville
+MenuName:Libre Baskerville
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp1\Document fonts\LibreBaskerville-Regular.ttf
+DataFormat:sfntData
+FileLength:159676
+FileModTime:1354158422
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans-Light
+FamilyName:Open Sans
+StyleName:Light
+FullName:Open Sans Light
+MenuName:Open Sans Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp1\Document fonts\OpenSans-Light_0.ttf
+DataFormat:sfntData
+FileLength:222412
+FileModTime:1459896644
+WeightClass:300
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans
+FamilyName:Open Sans
+StyleName:Regular
+FullName:Open Sans
+MenuName:Open Sans
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp1\Document fonts\OpenSans-Regular_0.ttf
+DataFormat:sfntData
+FileLength:217360
+FileModTime:1459896644
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:TimesNewRomanPS-BoldMT
+FamilyName:Times New Roman
+StyleName:Bold
+FullName:Times New Roman Bold
+MenuName:Times New Roman
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp1\Document fonts\timesbd.ttf
+DataFormat:sfntData
+FileLength:842216
+FileModTime:1400483505
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+

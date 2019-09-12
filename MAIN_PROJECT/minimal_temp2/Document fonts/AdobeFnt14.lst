@@ -1,0 +1,233 @@
+%!Adobe-FontList 1.14
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CenturyGothic
+FamilyName:Century Gothic
+StyleName:Regular
+FullName:Century Gothic
+MenuName:Century Gothic
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\GOTHIC.TTF
+DataFormat:sfntData
+FileLength:137568
+FileModTime:910859968
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:LibreBaskerville-Regular
+FamilyName:Libre Baskerville
+StyleName:Regular
+FullName:Libre Baskerville
+MenuName:Libre Baskerville
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\LibreBaskerville-Regular.ttf
+DataFormat:sfntData
+FileLength:159676
+FileModTime:1354158422
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:LinLibertine
+FamilyName:Linux Libertine
+StyleName:Regular
+FullName:Linux Libertine
+MenuName:Linux Libertine
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\LinLibertine_R.ttf
+DataFormat:sfntData
+FileLength:906980
+FileModTime:1308583862
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:LinLibertineB
+FamilyName:Linux Libertine
+StyleName:Bold
+FullName:Linux Libertine Bold
+MenuName:Linux Libertine
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\LinLibertine_RB.ttf
+DataFormat:sfntData
+FileLength:834472
+FileModTime:1308583862
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:LinLibertineBI
+FamilyName:Linux Libertine
+StyleName:Bold Italic
+FullName:Linux Libertine Bold Italic
+MenuName:Linux Libertine
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\LinLibertine_RBI.ttf
+DataFormat:sfntData
+FileLength:596808
+FileModTime:1308583862
+WeightClass:700
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:LinLibertineI
+FamilyName:Linux Libertine
+StyleName:Italic
+FullName:Linux Libertine Italic
+MenuName:Linux Libertine
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\LinLibertine_RI.ttf
+DataFormat:sfntData
+FileLength:852768
+FileModTime:1308583862
+WeightClass:400
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:LouisaCP
+FamilyName:LouisaCP
+StyleName:Regular
+FullName:LouisaCP
+MenuName:LouisaCP
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\LouisaCP.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:19824
+FileModTime:1424259688
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans-Bold
+FamilyName:Open Sans
+StyleName:Bold
+FullName:Open Sans Bold
+MenuName:Open Sans
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\OpenSans-Bold.ttf
+DataFormat:sfntData
+FileLength:224592
+FileModTime:1459896644
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans-BoldItalic
+FamilyName:Open Sans
+StyleName:Bold Italic
+FullName:Open Sans Bold Italic
+MenuName:Open Sans
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\OpenSans-BoldItalic.ttf
+DataFormat:sfntData
+FileLength:213292
+FileModTime:1459896644
+WeightClass:700
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans-Light
+FamilyName:Open Sans
+StyleName:Light
+FullName:Open Sans Light
+MenuName:Open Sans Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\OpenSans-Light_0.ttf
+DataFormat:sfntData
+FileLength:222412
+FileModTime:1459896644
+WeightClass:300
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans
+FamilyName:Open Sans
+StyleName:Regular
+FullName:Open Sans
+MenuName:Open Sans
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\OpenSans-Regular_0.ttf
+DataFormat:sfntData
+FileLength:217360
+FileModTime:1459896644
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:TheanoDidot-Regular
+FamilyName:Theano Didot
+StyleName:Regular
+FullName:Theano Didot Regular
+MenuName:Theano Didot
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp2\Document fonts\TheanoDidot-Regular.ttf
+DataFormat:sfntData
+FileLength:169668
+FileModTime:1459897958
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+

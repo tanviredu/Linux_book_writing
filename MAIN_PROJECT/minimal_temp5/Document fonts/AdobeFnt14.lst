@@ -1,0 +1,326 @@
+%!Adobe-FontList 1.14
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:AquilineTwo
+FamilyName:AquilineTwo
+StyleName:Regular
+FullName:AquilineTwo
+MenuName:AquilineTwo
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\AquilineTwo.ttf
+DataFormat:sfntData
+FileLength:200232
+FileModTime:1099770120
+WeightClass:500
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CrimsonText-BoldItalic
+FamilyName:Crimson Text
+StyleName:BoldItalic
+FullName:Crimson Text Bold Italic
+MenuName:Crimson Text
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\CrimsonText-BoldItalic.ttf
+DataFormat:sfntData
+FileLength:97756
+FileModTime:1459905830
+WeightClass:700
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CrimsonText-Italic
+FamilyName:Crimson Text
+StyleName:Italic
+FullName:Crimson Text Italic
+MenuName:Crimson Text
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\CrimsonText-Italic.ttf
+DataFormat:sfntData
+FileLength:106820
+FileModTime:1459905830
+WeightClass:400
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CrimsonText-Roman
+FamilyName:Crimson Text
+StyleName:Roman
+FullName:Crimson Text Regular
+MenuName:Crimson Text
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\CrimsonText-Regular.ttf
+DataFormat:sfntData
+FileLength:98248
+FileModTime:1459905830
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CrimsonText-Semibold
+FamilyName:Crimson Text
+StyleName:Semibold
+FullName:Crimson Text Bold
+MenuName:Crimson Text
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\CrimsonText-Semibold.ttf
+DataFormat:sfntData
+FileLength:81720
+FileModTime:1459905830
+WeightClass:600
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CenturyGothic
+FamilyName:Century Gothic
+StyleName:Regular
+FullName:Century Gothic
+MenuName:Century Gothic
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\GOTHIC.TTF
+DataFormat:sfntData
+FileLength:137568
+FileModTime:910859968
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:MesmerizeRg-Bold
+FamilyName:Mesmerize
+StyleName:Bold
+FullName:MesmerizeRg-Bold
+MenuName:Mesmerize Rg
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\mesmerize-bd.ttf
+DataFormat:sfntData
+FileLength:97852
+FileModTime:1417263932
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:MesmerizeBk-Regular
+FamilyName:Mesmerize
+StyleName:Book
+FullName:MesmerizeBk-Regular
+MenuName:Mesmerize Bk
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\mesmerize-bk.ttf
+DataFormat:sfntData
+FileLength:96996
+FileModTime:1417263932
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:MesmerizeCdEl-Regular
+FamilyName:Mesmerize
+StyleName:Condensed ExtraLight
+FullName:MesmerizeCdEl-Regular
+MenuName:Mesmerize Cd El
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\mesmerize-cd-el.ttf
+DataFormat:sfntData
+FileLength:92280
+FileModTime:1417263932
+WeightClass:250
+WidthClass:3
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:MesmerizeLt-Regular
+FamilyName:Mesmerize
+StyleName:Light
+FullName:MesmerizeLt-Regular
+MenuName:Mesmerize Lt
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\mesmerize-lt.ttf
+DataFormat:sfntData
+FileLength:99668
+FileModTime:1417263934
+WeightClass:300
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:MesmerizeRg-Regular
+FamilyName:Mesmerize
+StyleName:Regular
+FullName:MesmerizeRg-Regular
+MenuName:Mesmerize Rg
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\mesmerize-rg.ttf
+DataFormat:sfntData
+FileLength:99472
+FileModTime:1417263934
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:MesmerizeSb-Regular
+FamilyName:Mesmerize
+StyleName:SemiBold
+FullName:MesmerizeSb-Regular
+MenuName:Mesmerize Sb
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\mesmerize-sb.ttf
+DataFormat:sfntData
+FileLength:101728
+FileModTime:1417263934
+WeightClass:600
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:MesmerizeUl-Regular
+FamilyName:Mesmerize
+StyleName:UltraLight
+FullName:MesmerizeUl-Regular
+MenuName:Mesmerize Ul
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\mesmerize-ul.ttf
+DataFormat:sfntData
+FileLength:94556
+FileModTime:1417263936
+WeightClass:250
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans-BoldItalic
+FamilyName:Open Sans
+StyleName:Bold Italic
+FullName:Open Sans Bold Italic
+MenuName:Open Sans
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\OpenSans-BoldItalic.ttf
+DataFormat:sfntData
+FileLength:213292
+FileModTime:1459896644
+WeightClass:700
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans-Light
+FamilyName:Open Sans
+StyleName:Light
+FullName:Open Sans Light
+MenuName:Open Sans Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\OpenSans-Light_0.ttf
+DataFormat:sfntData
+FileLength:222412
+FileModTime:1459896644
+WeightClass:300
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans
+FamilyName:Open Sans
+StyleName:Regular
+FullName:Open Sans
+MenuName:Open Sans
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\OpenSans-Regular_0.ttf
+DataFormat:sfntData
+FileLength:217360
+FileModTime:1459896644
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:RavenSansNBP
+FamilyName:Raven Sans NBP
+StyleName:Regular
+FullName:Raven Sans NBP
+MenuName:Raven Sans NBP
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp5\Document fonts\raven2_sans.ttf
+DataFormat:sfntData
+FileLength:48396
+FileModTime:1354848192
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+

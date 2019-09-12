@@ -1,0 +1,251 @@
+%!Adobe-FontList 1.14
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:advent-Regular
+FamilyName:advent
+StyleName:Regular
+FullName:advent Regular 
+MenuName:advent
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\advent-Re.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:63992
+FileModTime:1253366686
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:AquilineTwo
+FamilyName:AquilineTwo
+StyleName:Regular
+FullName:AquilineTwo
+MenuName:AquilineTwo
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\AquilineTwo.ttf
+DataFormat:sfntData
+FileLength:200232
+FileModTime:1099770120
+WeightClass:500
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:FreeSerif
+FamilyName:FreeSerif
+StyleName:Medium
+FullName:Free Serif
+MenuName:FreeSerif
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\FreeSerif.ttf
+DataFormat:sfntData
+FileLength:1687516
+FileModTime:1284848278
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:FreeSerifBold
+FamilyName:FreeSerif
+StyleName:Bold
+FullName:Free Serif Bold
+MenuName:FreeSerif
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\FreeSerifBold.ttf
+DataFormat:sfntData
+FileLength:615292
+FileModTime:1284848598
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:FreeSerifBoldItalic
+FamilyName:FreeSerif
+StyleName:BoldItalic
+FullName:Free Serif Bold Italic
+MenuName:FreeSerif
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\FreeSerifBoldItalic.ttf
+DataFormat:sfntData
+FileLength:508412
+FileModTime:1284615358
+WeightClass:700
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:FreeSerifItalic
+FamilyName:FreeSerif
+StyleName:Italic
+FullName:Free Serif Italic
+MenuName:FreeSerif
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\FreeSerifItalic.ttf
+DataFormat:sfntData
+FileLength:691448
+FileModTime:1284615372
+WeightClass:400
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CenturyGothic
+FamilyName:Century Gothic
+StyleName:Regular
+FullName:Century Gothic
+MenuName:Century Gothic
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\GOTHIC.TTF
+DataFormat:sfntData
+FileLength:137568
+FileModTime:910859968
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans-Bold
+FamilyName:Open Sans
+StyleName:Bold
+FullName:Open Sans Bold
+MenuName:Open Sans
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\OpenSans-Bold.ttf
+DataFormat:sfntData
+FileLength:224592
+FileModTime:1459896644
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans-BoldItalic
+FamilyName:Open Sans
+StyleName:Bold Italic
+FullName:Open Sans Bold Italic
+MenuName:Open Sans
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\OpenSans-BoldItalic.ttf
+DataFormat:sfntData
+FileLength:213292
+FileModTime:1459896644
+WeightClass:700
+WidthClass:5
+AngleClass:1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans-Light
+FamilyName:Open Sans
+StyleName:Light
+FullName:Open Sans Light
+MenuName:Open Sans Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\OpenSans-Light_0.ttf
+DataFormat:sfntData
+FileLength:222412
+FileModTime:1459896644
+WeightClass:300
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OpenSans
+FamilyName:Open Sans
+StyleName:Regular
+FullName:Open Sans
+MenuName:Open Sans
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\OpenSans-Regular_0.ttf
+DataFormat:sfntData
+FileLength:217360
+FileModTime:1459896644
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:OptimusPrinceps
+FamilyName:OptimusPrinceps
+StyleName:Regular
+FullName:OptimusPrinceps
+MenuName:OptimusPrinceps
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\OptimusPrinceps_0.ttf
+DataFormat:sfntData
+FileLength:41416
+FileModTime:1098262922
+WeightClass:500
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:REVOLUTION
+FamilyName:REVOLUTION
+FullName:REVOLUTION
+MenuName:REVOLUTION
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\PROJECTs\013-Derek Murphy\048-new template\CREATED\minimal_temp4\Document fonts\REVOLUTION.ttf
+DataFormat:sfntData
+FileLength:18640
+FileModTime:1338012978
+WeightClass:400
+WidthClass:5
+AngleClass:0
+%EndFont
+
