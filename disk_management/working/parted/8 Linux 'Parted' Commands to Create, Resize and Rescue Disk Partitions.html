@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html class="js" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script async="" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/share.html"></script><script async="" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/count.json"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="alexaVerifyID" content="qqxQUyWSeUfqZOencfEoRM9vrVk">
+<meta name="msvalidate.01" content="E8C9208AD2F47ED874ED18E35FC370CE">
+<meta name="google-translate-customization" content="c567e5d7624a883b-609bf053fa02c58b-g01de0b1961de0feb-f">
+<meta property="article:publisher" content="https://facebook.com/tecmint">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.tecmint.com/xmlrpc.php">
+<title>8 Linux 'Parted' Commands to Create, Resize and Rescue Disk Partitions</title>
+<script async="" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/analytics.js"></script><script type="text/javascript">document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+
+<meta name="description" content="Parted is a famous command line tool that allows you to easily manage hard disk partitions. It can help you add, delete, shrink and extend disk partitions along with the file systems located on them.">
+<meta name="keywords" content="parted command examples,manage linux partitions,disk management in linux,linux tricks">
+<script type="application/ld+json" class="aioseop-schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.tecmint.com/#organization","url":"https://www.tecmint.com/","name":"Tecmint: Linux Howtos, Tutorials &amp; Guides","sameAs":[]},{"@type":"WebSite","@id":"https://www.tecmint.com/#website","url":"https://www.tecmint.com/","name":"Tecmint: Linux Howtos, Tutorials &amp; Guides","publisher":{"@id":"https://www.tecmint.com/#organization"}},{"@type":"WebPage","@id":"https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#webpage","url":"https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/","inLanguage":"en-US","name":"8 Linux &#8216;Parted&#8217; Commands to Create, Resize and Rescue Disk Partitions","isPartOf":{"@id":"https://www.tecmint.com/#website"},"image":{"@type":"ImageObject","@id":"https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#primaryimage","url":"https://www.tecmint.com/wp-content/uploads/2016/02/Parted-Command-to-Manage-Linux-Disk-Partitions.png","width":720,"height":345,"caption":"Parted Command to Manage Linux Disk Partitions"},"primaryImageOfPage":{"@id":"https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#primaryimage"},"datePublished":"2016-02-01T07:04:22+00:00","dateModified":"2016-02-01T07:04:22+00:00","description":"Parted is a famous command line tool that allows you to easily manage hard disk partitions. It can help you add, delete, shrink and extend disk partitions along with the file systems located on them."},{"@type":"Article","@id":"https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#article","isPartOf":{"@id":"https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#webpage"},"author":{"@id":"https://www.tecmint.com/author/marintodorov89/#author"},"headline":"8 Linux &#8216;Parted&#8217; Commands to Create, Resize and Rescue Disk Partitions","datePublished":"2016-02-01T07:04:22+00:00","dateModified":"2016-02-01T07:04:22+00:00","commentCount":"15","mainEntityOfPage":{"@id":"https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#webpage"},"publisher":{"@id":"https://www.tecmint.com/#organization"},"articleSection":"Linux Commands, Linux Tricks","image":{"@type":"ImageObject","@id":"https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#primaryimage","url":"https://www.tecmint.com/wp-content/uploads/2016/02/Parted-Command-to-Manage-Linux-Disk-Partitions.png","width":720,"height":345,"caption":"Parted Command to Manage Linux Disk Partitions"}},{"@type":"Person","@id":"https://www.tecmint.com/author/marintodorov89/#author","name":"Marin Todorov","sameAs":[],"image":{"@type":"ImageObject","@id":"https://www.tecmint.com/#personlogo","url":"https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=96&d=blank&r=g","width":96,"height":96,"caption":"Marin Todorov"}}]}</script>
+<link rel="canonical" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/">
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Tecmint: Linux Howtos, Tutorials &amp; Guides » Feed" href="https://feeds.feedburner.com/tecmint">
+<link rel="alternate" type="application/rss+xml" title="Tecmint: Linux Howtos, Tutorials &amp; Guides » Comments Feed" href="https://www.tecmint.com/comments/feed/">
+<link href="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/css.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="Tecmint: Linux Howtos, Tutorials &amp; Guides » 8 Linux ‘Parted’ Commands to Create, Resize and Rescue Disk Partitions Comments Feed" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/feed/">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/2s0c9.css" media="all">
+<script src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/2s0c9.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var ajaxurl = "https:\/\/www.tecmint.com\/wp-admin\/admin-ajax.php";
+var QBP_PUBLIC_GLOBALS = {"QBP_PUBLIC_NONCE":"6711987c75","USER_TYPE":"public","VISIBILITY_DATA":{"is_page":false,"is_post":true,"is_homepage":false,"is_archive":false,"is_custom_post_type":false,"id":18353}};
+/* ]]> */
+</script>
+<script src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/2s0c9_002.js" type="text/javascript"></script>
+
+<link rel="https://api.w.org/" href="https://www.tecmint.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.tecmint.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.tecmint.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="How to Install, Run and Delete Applications inside Docker Containers – Part 2" href="https://www.tecmint.com/install-run-and-delete-applications-inside-docker-containers/">
+<link rel="next" title="Deal: Learn Complete Game Developer Course – Build 60 Games $39" href="https://www.tecmint.com/learn-game-development-course/">
+<meta name="generator" content="WordPress 5.2.3">
+<link rel="shortlink" href="https://www.tecmint.com/?p=18353">
+<link rel="alternate" type="application/json+oembed" href="https://www.tecmint.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.tecmint.com%2Fparted-command-to-create-resize-rescue-linux-disk-partitions%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.tecmint.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.tecmint.com%2Fparted-command-to-create-resize-rescue-linux-disk-partitions%2F&amp;format=xml">
+
+<meta property="og:image" content="https://www.tecmint.com/wp-content/uploads/2016/02/Parted-Command-to-Manage-Linux-Disk-Partitions.png">
+
+
+<link rel="shortcut icon" href="https://www.tecmint.com/wp-content/themes/tecmint/images/favicon.ico">
+<!--[if lt IE 9]>
+<script src="https://www.tecmint.com/wp-content/themes/tecmint/js/ie/html5.js"></script>
+<script src="https://www.tecmint.com/wp-content/themes/tecmint/js/ie/selectivizr.js"></script>
+<![endif]-->
+<link rel="amphtml" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/amp/"><link rel="icon" href="https://www.tecmint.com/wp-content/uploads/2015/01/tecmint_square_logo.png" sizes="32x32">
+<link rel="icon" href="https://www.tecmint.com/wp-content/uploads/2015/01/tecmint_square_logo.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://www.tecmint.com/wp-content/uploads/2015/01/tecmint_square_logo.png">
+<meta name="msapplication-TileImage" content="https://www.tecmint.com/wp-content/uploads/2015/01/tecmint_square_logo.png">
+<style type="text/css">
+/* Dynamic CSS: For no styles in head, copy and put the css below in your custom.css or child theme's style.css, disable dynamic styles */
+body { font-family: "Roboto Condensed", Arial, sans-serif; }
+.boxed #wrapper, .container-inner { max-width: 1280px; }
+.sidebar .widget { padding-left: 20px; padding-right: 20px; padding-top: 20px; }
+.search-expand,
+#nav-topbar.nav-container { background-color: #23588c; }
+@media only screen and (min-width: 720px) {
+#nav-topbar .nav ul { background-color: #23588c; }
+}			
+#header { background-color: #075b88; }
+@media only screen and (min-width: 720px) {
+#nav-header .nav ul { background-color: #075b88; }
+}			
+#nav-header.nav-container { background-color: #2f6dab; }
+@media only screen and (min-width: 720px) {
+#nav-header .nav ul { background-color: #2f6dab; }
+}			
+#footer-bottom { background-color: #2f6dab; }
+.site-title a img { max-height: 90px; }
+img { -webkit-border-radius: 2px; border-radius: 2px; }
+</style>
+<link rel="author" href="https://plus.google.com/107665449243972690526/posts">
+<script async="" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/adsbygoogle.js" type="text/javascript"></script>
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "WebSite",
+"url": "https://www.tecmint.com/",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://www.tecmint.com/?s={search_term}",
+"query-input": "required name=search_term"
+}
+}
+</script>
+<script type="text/javascript">
+this.randomtip=function(){var e=jQuery("#tips li").length,t=Math.floor(Math.random()*e)+1;jQuery("#tips li:nth-child("+t+")").show()},jQuery(document).ready(function($){randomtip()});</script>
+<script data-cfasync="false" type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-33207530-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/adsbygoogle.js" type="text/javascript"></script>
+<script type="text/javascript">
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-2601749019656699",
+enable_page_level_ads: true
+});
+</script>
+</head>
+<body data-rsssl="1" class="post-template-default single single-post postid-18353 single-format-standard col-2cl full-width topbar-enabled unknown s1-collapse s2-collapse">
+<div id="wrapper">
+<header id="header">
+<nav class="nav-container group" id="nav-topbar">
+<div class="nav-toggle"><i class="fa fa-bars"></i></div>
+<div class="nav-text"></div>
+<div class="nav-wrap container"><ul id="menu-home" class="nav container-inner group"><li id="menu-item-334" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-334"><a href="https://www.tecmint.com/">Home</a></li>
+<li id="menu-item-10774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10774"><a target="_blank" rel="noopener noreferrer" href="https://www.tecmint.com/who-we-are/">About</a></li>
+<li id="menu-item-3912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3912"><a title="Free Linux eBooks" target="_blank" rel="noopener noreferrer" href="http://tecmint.tradepub.com/category/information-technology-servers-and-linux-server-os/806/">Free eBooks</a></li>
+<li id="menu-item-17151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17151"><a title="Discover and save on the best gear, gadgets, and software" target="_blank" rel="noopener noreferrer" href="https://deals.tecmint.com/">Deals</a></li>
+<li id="menu-item-18575" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18575"><a title="Support Us" href="https://www.tecmint.com/donate-to-tecmint/">Donate</a></li>
+<li id="menu-item-10775" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10775"><a target="_blank" rel="noopener noreferrer" href="https://www.tecmint.com/submit-articles/">Join TecMint</a></li>
+<li id="menu-item-11736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11736"><a target="_blank" rel="noopener noreferrer" href="https://www.tecmint.com/linux-online-training-courses/">Linux Online Courses</a></li>
+<li id="menu-item-11907" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11907"><a title="Subscribe to Daily Updates" target="_blank" rel="noopener noreferrer" href="https://www.tecmint.com/subscribe-to-blog/">Subscribe</a></li>
+<li id="menu-item-13338" class="hosting menu-item menu-item-type-custom menu-item-object-custom menu-item-13338"><a title="Best Web Hosting Companies" target="_blank" rel="noopener noreferrer" href="https://www.tecmint.com/best-web-hosting-for-linux/">Linux Hosting</a></li>
+<li id="menu-item-24734" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24734"><a title="Linux Commands – A Beginners Cheat Sheet" target="_blank" rel="noopener noreferrer" href="https://www.tecmint.com/linux-commands-cheat-sheet/">A-Z Linux Commands</a></li>
+</ul></div>
+<div class="container">
+<div class="container-inner">
+<div class="toggle-search"><i class="fa fa-search"></i></div>
+<div class="search-expand">
+<div class="search-expand-inner">
+<form action="https://www.tecmint.com/search/" id="cse-search-box">
+<div>
+<input type="hidden" name="cx" value="partner-pub-2601749019656699:2173448976">
+<input type="hidden" name="cof" value="FORID:10">
+<input type="hidden" name="ie" value="UTF-8">
+<input type="text" class="search" name="q" size="20" style="background: rgb(255, 255, 255) url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) no-repeat scroll left center; text-indent: 48px;" placeholder="Custom Search">
+<input type="submit" name="sa" value="Search">
+</div>
+<input name="siteurl" type="hidden" value="www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/"><input name="ref" type="hidden" value="www.tecmint.com/linux-partition-managers/"><input name="ss" type="hidden"></form>
+<script type="text/javascript" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/brand"></script>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container group">
+<div class="container-inner">
+<div class="group pad">
+<p class="site-title"><a href="https://www.tecmint.com/" rel="home"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/logo.png" alt="Tecmint: Linux Howtos, Tutorials &amp; Guides"></a></p>
+<div id="header-ads">
+<div id="text-17" class="widget widget_text"> <div class="textwidget">
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="8210224606"></ins>
+<script type="text/javascript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div> </div>
+</div>
+<nav class="nav-container group" id="nav-header">
+<div class="nav-toggle"><i class="fa fa-bars"></i></div>
+<div class="nav-text"></div>
+<div class="nav-wrap container"><ul id="menu-header" class="nav container-inner group"><li id="menu-item-10770" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10770"><a href="https://www.tecmint.com/best-linux-distributions/">Linux Distro’s</a></li>
+<li id="menu-item-10771" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10771"><a href="https://www.tecmint.com/category/interview-questions/">Interview Questions</a></li>
+<li id="menu-item-20869" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-20869"><a href="https://www.tecmint.com/#">Programming</a>
+<ul class="sub-menu" style="display: none;">
+<li id="menu-item-10772" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10772"><a title="Learn Linux Shell Scripting" href="https://www.tecmint.com/category/bash-shell/">Shell Scripting</a></li>
+<li id="menu-item-20870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20870"><a href="https://www.tecmint.com/category/python/">Learn Python</a></li>
+<li id="menu-item-20871" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20871"><a href="https://www.tecmint.com/category/awk-command/">Learn Awk</a></li>
+</ul>
+</li>
+<li id="menu-item-10773" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-10773"><a href="https://www.tecmint.com/category/linux-commands/">Linux Commands</a></li>
+<li id="menu-item-14795" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14795"><a href="https://www.tecmint.com/tag/linux-tricks/">Linux Tricks</a></li>
+<li id="menu-item-19684" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19684"><a href="https://www.tecmint.com/category/top-tools/">Best Linux Tools</a></li>
+<li id="menu-item-10443" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-10443"><a target="_blank" rel="noopener noreferrer" href="https://www.tecmint.com/#">Certifications</a>
+<ul class="sub-menu" style="display: none;">
+<li id="menu-item-14880" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14880"><a href="https://www.tecmint.com/how-to-setup-and-configure-static-network-routing-in-rhel/">RHCE Exam</a></li>
+<li id="menu-item-11906" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11906"><a target="_blank" rel="noopener noreferrer" href="https://www.tecmint.com/rhcsa-exam-reviewing-essential-commands-system-documentation/">RHCSA Exam</a></li>
+<li id="menu-item-10444" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10444"><a target="_blank" rel="noopener noreferrer" href="https://www.tecmint.com/installing-network-services-and-configuring-services-at-system-boot/">LFCE Exam</a></li>
+<li id="menu-item-14793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14793"><a href="https://www.tecmint.com/sed-command-to-create-edit-and-manipulate-files-in-linux/">LFCS Exam</a></li>
+</ul>
+</li>
+<li id="menu-item-12399" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-12399"><a href="https://www.tecmint.com/#">Guides</a>
+<ul class="sub-menu" style="display: none;">
+<li id="menu-item-18564" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18564"><a target="_blank" rel="noopener noreferrer" href="https://www.tecmint.com/install-docker-and-learn-containers-in-centos-rhel-7-6/">Docker Series</a></li>
+<li id="menu-item-17150" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17150"><a href="https://www.tecmint.com/setup-postfix-mail-server-and-dovecot-with-mariadb-in-centos/">Postfix Mail</a></li>
+<li id="menu-item-15041" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15041"><a href="https://www.tecmint.com/citrix-xenserver-installation-and-network-configuration-in-linux/">XenServer Series</a></li>
+<li id="menu-item-14794" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14794"><a href="https://www.tecmint.com/install-redhat-virtualization-rhev/">RHEV Series</a></li>
+<li id="menu-item-14805" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14805"><a href="https://www.tecmint.com/what-is-clustering-and-advantages-disadvantages-of-clustering-in-linux/">Clustering Series</a></li>
+<li id="menu-item-12400" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12400"><a href="https://www.tecmint.com/create-lvm-storage-in-linux/">LVM Series</a></li>
+<li id="menu-item-12402" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12402"><a href="https://www.tecmint.com/understanding-raid-setup-in-linux/">RAID Series</a></li>
+<li id="menu-item-12403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12403"><a href="https://www.tecmint.com/install-and-configure-kvm-in-linux/">KVM Series</a></li>
+<li id="menu-item-12401" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12401"><a href="https://www.tecmint.com/create-centralized-secure-storage-using-iscsi-targetin-linux/">iSCSI Series</a></li>
+<li id="menu-item-12406" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12406"><a href="https://www.tecmint.com/install-zentyal-as-primary-domain-controller-and-integrate-windows-system/">Zentyal Series</a></li>
+<li id="menu-item-16084" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16084"><a href="https://www.tecmint.com/install-and-configure-ansible-automation-tool-in-linux/">Ansible Series</a></li>
+<li id="menu-item-16395" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16395"><a href="https://www.tecmint.com/install-and-configure-django-web-framework-in-centos-debian-ubuntu/">Django Series</a></li>
+<li id="menu-item-14603" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14603"><a href="https://www.tecmint.com/create-gui-applications-in-linux/">Create GUI Apps</a></li>
+</ul>
+</li>
+<li id="menu-item-14796" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14796"><a href="https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/">Monitoring Tools</a>
+<ul class="sub-menu" style="display: none;">
+<li id="menu-item-14797" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14797"><a href="https://www.tecmint.com/install-nagios-in-linux/">Nagios</a></li>
+<li id="menu-item-14798" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14798"><a href="https://www.tecmint.com/install-and-configure-zabbix-monitoring-on-debian-centos-rhel/">Zabbix</a></li>
+<li id="menu-item-14799" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14799"><a href="https://www.tecmint.com/install-cacti-network-monitoring-on-rhel-centos-6-3-5-8-and-fedora-17-12/">Cacti</a></li>
+<li id="menu-item-14800" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14800"><a href="https://www.tecmint.com/install-observium-in-centos/">Observium</a></li>
+<li id="menu-item-14801" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14801"><a href="https://www.tecmint.com/monitorix-a-lightweight-system-and-network-monitoring-tool-for-linux/">Monitorix</a></li>
+<li id="menu-item-14802" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14802"><a href="https://www.tecmint.com/install-collectd-and-collectd-web-to-monitor-server-resources-in-linux/">Collectd</a></li>
+<li id="menu-item-14803" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14803"><a href="https://www.tecmint.com/linux-performance-monitoring-with-collectl-tool/">Collectl</a></li>
+<li id="menu-item-14804" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14804"><a href="https://www.tecmint.com/mysql-performance-monitoring/">MySQL Monitoring</a></li>
+</ul>
+</li>
+<li id="menu-item-20410" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20410"><a title="Linux and WordPress Services" target="_blank" rel="noopener noreferrer" href="https://www.fosswork.com/">Support</a></li>
+</ul></div>
+</nav>
+</div>
+</div>
+</header>
+<div class="container" id="page">
+<div class="container-inner">
+<div class="main">
+<div class="main-inner group">
+<section class="content">
+<div class="page-title pad group">
+<ul class="meta-single group">
+<li class="category"><a href="https://www.tecmint.com/category/linux-commands/" rel="category tag">Linux Commands</a></li>
+<li class="comments"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comments"><i class="fa fa-comments-o"></i>15</a></li>
+</ul>
+</div>
+<div class="pad group">
+<article class="post-18353 post type-post status-publish format-standard has-post-thumbnail hentry category-linux-commands tag-linux-tricks">
+<div class="post-inner group">
+<h1 class="post-title">8 Linux ‘Parted’ Commands to Create, Resize and Rescue Disk Partitions</h1>
+<p class="post-byline">by <a href="https://www.tecmint.com/author/marintodorov89/" title="Posts by Marin Todorov" rel="author">Marin Todorov</a> | Published: February 1, 2016 | 
+
+February 1, 2016 </p>
+<div class="add-box">
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2601749019656699" data-ad-slot="2902592253" data-ad-format="link"></ins>
+<script type="text/javascript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="clear"></div>
+<div id="exam_announcement">
+<i style="color:#28557a; font-size:20px;" class="fa fa-book"></i>
+<b>Download Your Free eBooks NOW</b> - <a target="_blank" style="text-decoration:underline;" href="https://www.tecmint.com/10-useful-free-linux-ebooks-for-newbies-and-administrators/">10 Free Linux eBooks for Administrators</a> | <a style="text-decoration:underline;" target="_blank" href="https://www.tecmint.com/free-linux-shell-scripting-books/">4 Free Shell Scripting eBooks</a>
+</div>
+<div class="clear"></div>
+<div class="ads-inner-mobile">
+<center>
+
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="9946480174"></ins>
+<script type="text/javascript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+</div>
+<div class="clear"></div>
+<div class="entry share">
+<div class="entry-inner">
+<p><strong>Parted</strong> is a famous command line tool that allows you
+ to easily manage hard disk partitions. It can help you add, delete, 
+shrink and extend disk partitions along with the file systems located on
+ them. Parted has gone a long way from when it first came out. Some of 
+it’s functions have been removed, others have been added.</p>
+<div id="attachment_18529" style="width: 730px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2016/02/Parted-Command-to-Manage-Linux-Disk-Partitions.png" rel="attachment wp-att-18529"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/Parted-Command-to-Manage-Linux-Disk-Partitions.png" aria-describedby="caption-attachment-18529" alt="Parted Command to Manage Linux Disk Partitions" class="size-full wp-image-18529" style="display: inline;" data-lazy-loaded="true" width="720" height="345"><noscript><img aria-describedby="caption-attachment-18529" src="https://www.tecmint.com/wp-content/uploads/2016/02/Parted-Command-to-Manage-Linux-Disk-Partitions.png" alt="Parted Command to Manage Linux Disk Partitions" width="720" height="345" class="size-full wp-image-18529" /></noscript></a><p id="caption-attachment-18529" class="wp-caption-text">Parted Command to Manage Linux Disk Partitions</p></div>
+<p>In this tutorial&nbsp;you will learn&nbsp;the basics of parted and we
+ will show you some practical examples. If&nbsp;you don’t have any 
+previous experience with parted, please be aware that parted writes the 
+changes immediately to your disk, so be careful if you try to modify 
+your disk partitions.</p>
+<p>If you plan on testing parted, the better option would be to simply 
+use a virtual machine or old computer/laptop without any valuable 
+information on it. To make modifications on a disk partition it must not
+ be in use. If you need to work on primary partition, you may boot into 
+rescue mode.</p>
+<p><strong style="color: red;">Note</strong>: You will need to have root access to the machine you will be working on in order to use parted.</p>
+<h3>How to Install Parted on Linux</h3>
+<center style="padding-bottom: 20px;padding-top: 10px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2601749019656699" data-ad-slot="5590002574" data-ad-format="auto" data-full-width-responsive="true"></ins><script type="text/javascript">(adsbygoogle = window.adsbygoogle || []).push({});</script></center><p>On many Linux distributions, <strong>parted</strong> comes pre-installed. If it is not included in your distro, you can install it with:</p>
+<pre>$ sudo apt-get install parted           [On <strong>Debian/Ubuntu</strong> systems]
+# yum install parted                    [On <strong>RHEL/CentOS</strong> and <strong>Fedora</strong>]
+# dnf install parted                    [On <strong>Fedora 22+</strong> versions]
+</pre>
+<p>Once you have make sure that <strong>parted</strong> is installed, you can proceed further to check out some real world examples of parted command in the rest of this article.</p>
+<h4>1. Check Parted Version</h4>
+<p>Run the following command, you see message similar to the one shown 
+on the image below. Don’t worry if your parted version is different. 
+Unless specified otherwise, parted will use your primary drive, which in
+ most cases will be <code>/dev/sda</code>.</p>
+<pre>$ parted
+</pre>
+<div id="attachment_18515" style="width: 876px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2016/02/Check-Parted-Command-Version.png" rel="attachment wp-att-18515"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/Check-Parted-Command-Version.png" aria-describedby="caption-attachment-18515" class="size-full wp-image-18515" alt="Check Parted Command Version" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/Check-Parted-Command-Version.png 866w, https://www.tecmint.com/wp-content/uploads/2016/02/Check-Parted-Command-Version-768x167.png 768w" sizes="(max-width: 866px) 100vw, 866px" style="display: inline;" data-lazy-loaded="true" width="866" height="188"><noscript><img aria-describedby="caption-attachment-18515" class="size-full wp-image-18515" src="https://www.tecmint.com/wp-content/uploads/2016/02/Check-Parted-Command-Version.png" alt="Check Parted Command Version" width="866" height="188" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/Check-Parted-Command-Version.png 866w, https://www.tecmint.com/wp-content/uploads/2016/02/Check-Parted-Command-Version-768x167.png 768w" sizes="(max-width: 866px) 100vw, 866px" /></noscript></a><p id="caption-attachment-18515" class="wp-caption-text">Check Parted Command Version</p></div>
+<p>If you want to exit parted, simply type:</p>
+<pre>$ quit
+</pre>
+<h4>2. List&nbsp;Linux Disk Partitions</h4>
+<p>Now that parted is started, let’s list the partitions of the selected
+ hard disk. As mentioned earlier, parted chooses your&nbsp;first drive 
+by default.&nbsp;To see the disk partitions&nbsp;run <code>print</code>.</p>
+<pre>(parted) print
+</pre>
+<div id="attachment_18516" style="width: 858px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2016/02/Check-Linux-Partitions.png" rel="attachment wp-att-18516"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/Check-Linux-Partitions.png" aria-describedby="caption-attachment-18516" class="size-full wp-image-18516" alt="Check Linux Partitions" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/Check-Linux-Partitions.png 848w, https://www.tecmint.com/wp-content/uploads/2016/02/Check-Linux-Partitions-768x346.png 768w" sizes="(max-width: 848px) 100vw, 848px" style="display: inline;" data-lazy-loaded="true" width="848" height="382"><noscript><img aria-describedby="caption-attachment-18516" class="size-full wp-image-18516" src="https://www.tecmint.com/wp-content/uploads/2016/02/Check-Linux-Partitions.png" alt="Check Linux Partitions" width="848" height="382" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/Check-Linux-Partitions.png 848w, https://www.tecmint.com/wp-content/uploads/2016/02/Check-Linux-Partitions-768x346.png 768w" sizes="(max-width: 848px) 100vw, 848px" /></noscript></a><p id="caption-attachment-18516" class="wp-caption-text">Check Linux Partitions</p></div>
+<p>When running <code>print</code>, it will also display the hard disk 
+information and model. Here is example from a real hard disk (not 
+virtual as shown on the image above) :</p>
+<pre><strong style="color: yellow;">(parted) print</strong>
+
+Model: ATA TOSHIBA MQ01ACF0 (scsi)
+Disk /dev/sda: 320GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: msdos
+
+Number &nbsp;Start &nbsp; End &nbsp; &nbsp;Size &nbsp; Type &nbsp; &nbsp; &nbsp;File system &nbsp;Flags
+
+&nbsp;1 &nbsp; &nbsp; &nbsp;1049kB &nbsp;256MB &nbsp;255MB &nbsp;primary &nbsp; ext2 &nbsp; &nbsp; &nbsp; &nbsp; boot
+&nbsp;2 &nbsp; &nbsp; &nbsp;257MB &nbsp; 320GB &nbsp;320GB &nbsp;extended
+&nbsp;5 &nbsp; &nbsp; &nbsp;257MB &nbsp; 320GB &nbsp;320GB &nbsp;logical &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lvm
+</pre>
+<p>In the example above, you can see the disk model, capacity sector size and partition table.</p>
+<h4>3. List or Switch to Different Disk</h4>
+<p>If you have more than one hard disk, you can easily switch&nbsp;between disks, by using the “<code>select</code>” command. In the example below, I will switch from <code>/dev/sda</code> to <code>/dev/sdb</code> which is a secondary drive on my system.</p>
+<p>To easily switch between disks you can use:</p>
+<pre>(parted) select /dev/sdX
+</pre>
+<div id="attachment_18518" style="width: 756px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2016/02/Select-Different-Disk.png" rel="attachment wp-att-18518"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/Select-Different-Disk.png" aria-describedby="caption-attachment-18518" class="size-full wp-image-18518" alt="Select Different Disk" style="display: inline;" data-lazy-loaded="true" width="746" height="400"><noscript><img aria-describedby="caption-attachment-18518" class="size-full wp-image-18518" src="https://www.tecmint.com/wp-content/uploads/2016/02/Select-Different-Disk.png" alt="Select Different Disk" width="746" height="400" /></noscript></a><p id="caption-attachment-18518" class="wp-caption-text">Select Different Disk</p></div>
+<p>Change <code>"X"</code> with the letter of the disk to which you wish to switch.</p>
+<h4>4. Create Primary or Logical Partition in Linux</h4>
+<p>Parted can be used to create primary and logical disk partitions. In 
+this example, I will show you how to create primary partition, but the 
+steps are the same for logical partitions.</p>
+<p>To create new partition, parted uses “<code>mkpart</code>“. You can give it additional parameters like <code>"primary"</code> or <code>"logical"</code> depending on the partition type that you wish to create.</p>
+<p>Before you start creating partitions, it’s important to make sure that you are using (you have selected) the right disk.</p>
+<p>Start by using print:</p>
+<pre>(parted) print
+</pre>
+<div id="attachment_18519" style="width: 638px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2016/02/parted-show-current-disk-min.png" rel="attachment wp-att-18519"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/parted-show-current-disk-min.png" aria-describedby="caption-attachment-18519" class="size-full wp-image-18519" alt="Show Current Linux Disk" style="display: inline;" data-lazy-loaded="true" width="628" height="256"><noscript><img aria-describedby="caption-attachment-18519" class="size-full wp-image-18519" src="https://www.tecmint.com/wp-content/uploads/2016/02/parted-show-current-disk-min.png" alt="Show Current Linux Disk" width="628" height="256" /></noscript></a><p id="caption-attachment-18519" class="wp-caption-text">Show Current Linux Disk</p></div>
+<p>As shown on the above image, we are using a virtual drive of <strong>34 GB</strong>. First we will give the new disk a label and then create a partition and set a file system on it.</p>
+<p>Now the first step is to give the new <a href="https://www.tecmint.com/change-modify-linux-disk-partition-label-names/" target="_blank">disk a label name</a> with:</p>
+<pre>(parted) mklabel msdos
+</pre>
+<p>Now create the new partition with &nbsp;<code>mkpart</code>. The listed units are in megabytes (<strong>MB)</strong>. We will create a <strong>10 GB</strong> partition starting from <strong>1</strong> to <strong>10000</strong>:</p>
+<pre>(parted) mkpart
+ 
+Partition type?&nbsp; primary/extended? primary
+File system type?&nbsp; [ext2]?
+Start? 1
+End? 10000
+(parted) print
+Model: ATA VBOX HARDDISK (scsi)
+Disk /dev/sdb: 34.4GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+Number&nbsp; Start &nbsp; End &nbsp; &nbsp; Size&nbsp; &nbsp; Type &nbsp; &nbsp; File system&nbsp; Flags
+ 1&nbsp; &nbsp; &nbsp; 1049kB&nbsp; 10.0GB&nbsp; 9999MB&nbsp; primary&nbsp; ext2 &nbsp; &nbsp; &nbsp; &nbsp; lba
+</pre>
+<div id="attachment_18520" style="width: 902px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2016/02/Create-Primary-Logical-Linux-Partitions.png" rel="attachment wp-att-18520"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/Create-Primary-Logical-Linux-Partitions.png" aria-describedby="caption-attachment-18520" class="size-full wp-image-18520" alt="Create Primary or Logical Linux Partitions" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/Create-Primary-Logical-Linux-Partitions.png 892w, https://www.tecmint.com/wp-content/uploads/2016/02/Create-Primary-Logical-Linux-Partitions-768x377.png 768w" sizes="(max-width: 892px) 100vw, 892px" style="display: inline;" data-lazy-loaded="true" width="892" height="438"><noscript><img aria-describedby="caption-attachment-18520" class="size-full wp-image-18520" src="https://www.tecmint.com/wp-content/uploads/2016/02/Create-Primary-Logical-Linux-Partitions.png" alt="Create Primary or Logical Linux Partitions" width="892" height="438" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/Create-Primary-Logical-Linux-Partitions.png 892w, https://www.tecmint.com/wp-content/uploads/2016/02/Create-Primary-Logical-Linux-Partitions-768x377.png 768w" sizes="(max-width: 892px) 100vw, 892px" /></noscript></a><p id="caption-attachment-18520" class="wp-caption-text">Create Primary or Logical Linux Partitions</p></div>
+<p>Next, &nbsp;exit parted with <code>"quit"</code> command. We will&nbsp;format our new partition in ext4 file system using <code>mkfs</code>. To make this happen run the following command:</p>
+<pre># mkfs.ext4 /dev/sdb1
+</pre>
+<p><strong style="color: red;">Note</strong>: It’s important to select the right disk and partition when executing the above command!</p>
+<p>Now let’s verify our results, by printing the partition table on our 
+secondary disk. Under file system column, you should see ext4 or the 
+file system type that you have decided to use for your partition:</p>
+<div id="attachment_18521" style="width: 1018px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2016/02/verify-disk-partition-filesystem-min.png" rel="attachment wp-att-18521"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/verify-disk-partition-filesystem-min.png" aria-describedby="caption-attachment-18521" class="size-full wp-image-18521" alt="Verify Disk Partition Filesystem" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/verify-disk-partition-filesystem-min.png 1008w, https://www.tecmint.com/wp-content/uploads/2016/02/verify-disk-partition-filesystem-min-768x445.png 768w" sizes="(max-width: 1008px) 100vw, 1008px" style="display: inline;" data-lazy-loaded="true" width="1008" height="584"><noscript><img aria-describedby="caption-attachment-18521" class="size-full wp-image-18521" src="https://www.tecmint.com/wp-content/uploads/2016/02/verify-disk-partition-filesystem-min.png" alt="Verify Disk Partition Filesystem" width="1008" height="584" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/verify-disk-partition-filesystem-min.png 1008w, https://www.tecmint.com/wp-content/uploads/2016/02/verify-disk-partition-filesystem-min-768x445.png 768w" sizes="(max-width: 1008px) 100vw, 1008px" /></noscript></a><p id="caption-attachment-18521" class="wp-caption-text">Verify Disk Partition Filesystem</p></div>
+<h4>5. Resize Linux Disk&nbsp;Partition</h4>
+<p>Parted includes multiple useful functions and one of them is <code>"resizepart"</code>.&nbsp;As you have probably figured this out by now, <code>"resizepart"</code> helps you resize a partition.</p>
+<p>In the example below,&nbsp;you will see how to resize an existing 
+partition. For the purpose of this example, we will be using the earlier
+ created partition.</p>
+<p>First you will need to know the number of the partition that you will be resizing. This can be easily found by using <code>"print"</code>:</p>
+<pre>(parted) print
+</pre>
+<div id="attachment_18523" style="width: 906px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2016/02/parted-find-partition-number.png" rel="attachment wp-att-18523"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/parted-find-partition-number.png" aria-describedby="caption-attachment-18523" class="size-full wp-image-18523" alt="Find Linux Partition Number" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/parted-find-partition-number.png 896w, https://www.tecmint.com/wp-content/uploads/2016/02/parted-find-partition-number-768x302.png 768w" sizes="(max-width: 896px) 100vw, 896px" style="display: inline;" data-lazy-loaded="true" width="896" height="352"><noscript><img aria-describedby="caption-attachment-18523" class="size-full wp-image-18523" src="https://www.tecmint.com/wp-content/uploads/2016/02/parted-find-partition-number.png" alt="Find Linux Partition Number" width="896" height="352" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/parted-find-partition-number.png 896w, https://www.tecmint.com/wp-content/uploads/2016/02/parted-find-partition-number-768x302.png 768w" sizes="(max-width: 896px) 100vw, 896px" /></noscript></a><p id="caption-attachment-18523" class="wp-caption-text">Find Linux Partition Number</p></div>
+<p>In our example, the partition number is <code>"1"</code>. Now run the resizepart command:</p>
+<pre>(parted) resizepart
+</pre>
+<p>You will be asked for the number of&nbsp;the partition that you will 
+resize. Enter it’s number. After that, you will be asked to set the new 
+ending point&nbsp;for this partition. Remember that by default the units
+ are in <strong>MB</strong>. In our example, we have set the new partition size to <strong>15 GB</strong>:</p>
+<pre>(parted) resizepart 
+Partition number? 1
+End?&nbsp; [10.0GB]? 15000
+</pre>
+<p>Now verify the results with <code>"print"</code>:</p>
+<pre>(parted) print
+</pre>
+<div id="attachment_18524" style="width: 908px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2016/02/parted-resize-verify.png" rel="attachment wp-att-18524"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/parted-resize-verify.png" aria-describedby="caption-attachment-18524" class="size-full wp-image-18524" alt="Verify Linux Resize Partition" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/parted-resize-verify.png 898w, https://www.tecmint.com/wp-content/uploads/2016/02/parted-resize-verify-768x327.png 768w" sizes="(max-width: 898px) 100vw, 898px" style="display: inline;" data-lazy-loaded="true" width="898" height="382"><noscript><img aria-describedby="caption-attachment-18524" class="size-full wp-image-18524" src="https://www.tecmint.com/wp-content/uploads/2016/02/parted-resize-verify.png" alt="Verify Linux Resize Partition" width="898" height="382" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/parted-resize-verify.png 898w, https://www.tecmint.com/wp-content/uploads/2016/02/parted-resize-verify-768x327.png 768w" sizes="(max-width: 898px) 100vw, 898px" /></noscript></a><p id="caption-attachment-18524" class="wp-caption-text">Verify Linux Resize Partition</p></div>
+<h4>6. Delete&nbsp;Linux Partition</h4>
+<p>The next thing you will learn is how to delete a partition from your hard drive. To do this, you will need to use the <code>"rm"</code> command within parted. To delete a disk partition you will need to know it’s number.</p>
+<p>As mentioned earlier, you can easily obtain this number by using <code>"print"</code>. In our example, we will delete the partition&nbsp;with number <code>1</code> from our secondary drive <code>/dev/sdb1</code>:</p>
+<pre>(parted) rm 1
+</pre>
+<p>Verify the results by printing the partitions table:</p>
+<div id="attachment_18525" style="width: 898px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2016/02/parted-delete-partition.png" rel="attachment wp-att-18525"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/parted-delete-partition.png" aria-describedby="caption-attachment-18525" class="size-full wp-image-18525" alt="Delete a Linux Partition" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/parted-delete-partition.png 888w, https://www.tecmint.com/wp-content/uploads/2016/02/parted-delete-partition-768x567.png 768w" sizes="(max-width: 888px) 100vw, 888px" style="display: inline;" data-lazy-loaded="true" width="888" height="656"><noscript><img aria-describedby="caption-attachment-18525" class="size-full wp-image-18525" src="https://www.tecmint.com/wp-content/uploads/2016/02/parted-delete-partition.png" alt="Delete a Linux Partition" width="888" height="656" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/parted-delete-partition.png 888w, https://www.tecmint.com/wp-content/uploads/2016/02/parted-delete-partition-768x567.png 768w" sizes="(max-width: 888px) 100vw, 888px" /></noscript></a><p id="caption-attachment-18525" class="wp-caption-text">Delete a Linux Partition</p></div>
+<h4>7. Rescue Linux Disk Partition</h4>
+<p>Parted supports a “<code>rescue"</code> utility that helps you 
+recover a lost partition between a starting and ending point. If a 
+partition is found within that range, it will attempt to restore it.</p>
+<p>Here is an example:</p>
+<pre>(parted) <strong>rescue</strong>
+Start? <strong>1</strong>
+End? <strong>15000</strong>
+(parted) print
+Model: Unknown (unknown)
+Disk /dev/sdb1: 15.0GB
+Sector size (logical/physical): 512B/512B
+Partition Table: loop
+Disk Flags:
+
+Number Start End Size File system Flags
+1 0.00B 15.0GB 15.0GB ext4
+</pre>
+<h4>8&nbsp;Change Linux Partition Flag</h4>
+<p>Using parted, you can change the state of a&nbsp;flag for disk partitions. The supported flags are:</p>
+<ol>
+<li>boot</li>
+<li>root</li>
+<li>swap</li>
+<li>hidden</li>
+<li>raid</li>
+<li>lvm</li>
+<li>lba</li>
+<li>legacy_boot</li>
+<li>irst</li>
+<li>esp</li>
+<li>palo</li>
+</ol>
+<p>The states can be either <code>"on"</code> or <code>"off"</code>. To change a flag simply run <code>"set"</code> command within parted:</p>
+<pre>(parted) set 2 lba on
+</pre>
+<p>The above command sets <code>lba</code> flag to on for second partition. Verify the results with <code>print</code>:</p>
+<div id="attachment_18526" style="width: 930px" class="wp-caption aligncenter"><a href="https://www.tecmint.com/wp-content/uploads/2016/02/parted-flags-example.png" rel="attachment wp-att-18526"><img src="https://www.tecmint.com/wp-content/uploads/2016/02/parted-flags-example.png" aria-describedby="caption-attachment-18526" class="size-full wp-image-18526" alt="Change Partition Flag" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/parted-flags-example.png 920w, https://www.tecmint.com/wp-content/uploads/2016/02/parted-flags-example-768x322.png 768w" sizes="(max-width: 920px) 100vw, 920px" style="display: inline;" data-lazy-loaded="true" width="920" height="386"><noscript><img aria-describedby="caption-attachment-18526" class="size-full wp-image-18526" src="https://www.tecmint.com/wp-content/uploads/2016/02/parted-flags-example.png" alt="Change Partition Flag" width="920" height="386" srcset="https://www.tecmint.com/wp-content/uploads/2016/02/parted-flags-example.png 920w, https://www.tecmint.com/wp-content/uploads/2016/02/parted-flags-example-768x322.png 768w" sizes="(max-width: 920px) 100vw, 920px" /></noscript></a><p id="caption-attachment-18526" class="wp-caption-text">Change Partition Flag</p></div>
+<h3>Conclusion</h3>
+<p><strong>Parted</strong> is a useful and powerful utility that can 
+help you manage your disk partitions in Linux systems. As always, when 
+working with disk partitions you need to be extra careful. It is 
+strongly recommend to go through parted man pages to learn how you can 
+customize it’s output and find more information about its capabilities.</p>
+<p>If you have any questions or comments, please do not hesitate to use the comment section below.</p>
+</div>
+<div class="sharrre-container" style="position: relative; top: 7536.63px; left: 0px;">
+<span>Share</span>
+<div id="twitter" data-url="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/" data-text="8 Linux ‘Parted’ Commands to Create, Resize and Rescue Disk Partitions" data-title="Tweet" class="sharrre"><a class="box" href="#"><div class="count" href="#">+</div><div class="share"><i class="fa fa-twitter"></i></div></a></div>
+<div id="facebook" data-url="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/" data-text="8 Linux ‘Parted’ Commands to Create, Resize and Rescue Disk Partitions" data-title="Like" class="sharrre"><a class="box" href="#"><div class="count" href="#">0</div><div class="share"><i class="fa fa-facebook-square"></i></div></a></div>
+<div id="googleplus" data-url="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/" data-text="8 Linux ‘Parted’ Commands to Create, Resize and Rescue Disk Partitions" data-title="+1" class="sharrre"><a class="box" href="#"><div class="count" href="#">0</div><div class="share"><i class="fa fa-google-plus-square"></i></div></a></div>
+<div id="linkedin" data-url="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/" data-text="8 Linux ‘Parted’ Commands to Create, Resize and Rescue Disk Partitions" data-title="Share It" class="sharrre"></div>
+<div style="font-weight: 600; padding-top: 10px; width: 55px;"><a href="#comments"><img alt="Ask Anything" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/help.png"></a></div>
+</div>
+<script type="text/javascript">
+// Sharrre
+jQuery(document).ready(function(){
+jQuery('#twitter').sharrre({
+share: {
+twitter: true
+},
+template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-twitter"></i></div></a>',
+enableHover: false,
+enableTracking: true,
+buttons: { twitter: {via: 'tecmint'}},
+click: function(api, options){
+api.simulateClick();
+api.openPopup('twitter');
+}
+});
+jQuery('#facebook').sharrre({
+share: {
+facebook: true
+},
+template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-facebook-square"></i></div></a>',
+enableHover: false,
+enableTracking: true,
+click: function(api, options){
+api.simulateClick();
+api.openPopup('facebook');
+}
+});
+jQuery('#googleplus').sharrre({
+share: {
+googlePlus: true
+},
+template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-google-plus-square"></i></div></a>',
+enableHover: false,
+enableTracking: true,
+urlCurl: 'https://www.tecmint.com/wp-content/themes/tecmint/js/sharrre.php',
+click: function(api, options){
+api.simulateClick();
+api.openPopup('googlePlus');
+}
+});
+jQuery('#linkedin').sharrre({
+share: {
+linkedin: true
+},
+template: '<a class="box" href="#" rel="nofollow"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-linkedin"></i></div></a>',
+enableHover: false,
+enableTracking: true,
+buttons: {
+linkedin: {
+description: '8 Linux &#8216;Parted&#8217; Commands to Create, Resize and Rescue Disk Partitions',media: 'https://www.tecmint.com/wp-content/uploads/2016/02/Parted-Command-to-Manage-Linux-Disk-Partitions.png'				}
+},
+click: function(api, options){
+api.simulateClick();
+api.openPopup('linkedin');
+}
+});
+// Scrollable sharrre bar, contributed by Erik Frye. Awesome!
+var shareContainer = jQuery(".sharrre-container"),
+header = jQuery('#header'),
+postEntry = jQuery('.entry'),
+$window = jQuery(window),
+distanceFromTop = 20,
+startSharePosition = shareContainer.offset(),
+contentBottom = postEntry.offset().top + postEntry.outerHeight(),
+topOfTemplate = header.offset().top;
+getTopSpacing();
+shareScroll = function(){
+if($window.width() > 719){	
+var scrollTop = $window.scrollTop() + topOfTemplate,
+stopLocation = contentBottom - (shareContainer.outerHeight() + topSpacing);
+if(scrollTop > stopLocation){
+shareContainer.offset({top: contentBottom - shareContainer.outerHeight(),left: startSharePosition.left});
+}
+else if(scrollTop >= postEntry.offset().top-topSpacing){
+shareContainer.offset({top: scrollTop + topSpacing, left: startSharePosition.left});
+}else if(scrollTop < startSharePosition.top+(topSpacing-1)){
+shareContainer.offset({top: startSharePosition.top,left:startSharePosition.left});
+}
+}
+},
+shareMove = function(){
+startSharePosition = shareContainer.offset();
+contentBottom = postEntry.offset().top + postEntry.outerHeight();
+topOfTemplate = header.offset().top;
+getTopSpacing();
+};
+/* As new images load the page content body gets longer. The bottom of the content area needs to be adjusted in case images are still loading. */
+setTimeout(function() {
+contentBottom = postEntry.offset().top + postEntry.outerHeight();
+}, 2000);
+if (window.addEventListener) {
+window.addEventListener('scroll', shareScroll, false);
+window.addEventListener('resize', shareMove, false);
+} else if (window.attachEvent) {
+window.attachEvent('onscroll', shareScroll);
+window.attachEvent('onresize', shareMove);
+}
+function getTopSpacing(){
+if($window.width() > 1024)
+topSpacing = distanceFromTop + jQuery('.nav-wrap').outerHeight();
+else
+topSpacing = distanceFromTop;
+}
+});
+</script>
+<div class="clear"></div>
+</div>
+</div>
+</article>
+<div class="clear"></div>
+<div class="clear"></div>
+<div class="ads-inner-mobile">
+<center style="padding-top:30px;">
+
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="7807254572"></ins>
+<script type="text/javascript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+</div>
+<div class="clear"></div>
+<div id="fosswork_support"><center><em><b style="color:#d80a0a;text-shadow: 0 1px 0 #fff;text-decoration:underline;"><a onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Linux and WordPress Support','FossWork')" href="https://www.fosswork.com/" target="_blank">Best Affordable Linux and WordPress Services For Your Business</a></b><br>Outsource Your Linux and WordPress Project and Get it Promptly Completed Remotely and Delivered Online.</em></center></div>
+<div class="clear"></div>
+<div class="after-post-box">
+<h2>If You Appreciate What We Do Here On TecMint, You Should Consider:</h2>
+<ol>
+<li>Stay Connected to: <strong><a target="_blank" rel="nofollow" href="https://bit.ly/1TP6lcM" title="Follow TecMint on Twitter">Twitter</a></strong> | <strong><a target="_blank" rel="nofollow" href="https://bit.ly/1rDYrdj" title="Like Us on Facebook">Facebook</a></strong> | <strong><a target="_blank" rel="nofollow" href="https://bit.ly/24J6lna" title="Join Us On Google+">Google Plus</a></strong></li>
+<li>Subscribe to our email updates: <strong><a target="_blank" rel="nofollow" href="https://bit.ly/2dhBpWQ" title="Subscribe to TecMint Email Updates">Sign Up Now</a></strong></li>
+<li>Get your own <strong><a target="_blank" rel="nofollow" title="WordPress Hosting" href="https://www.bluehost.com/track/tecmint/">self-hosted blog with a Free Domain</a></strong> at (<strong>$3.45/month</strong>).</li>
+<li>Become a Supporter - <strong><a target="_blank" href="https://www.tecmint.com/donate-to-tecmint/">Make a contribution via PayPal</a></strong></li>
+<li>Support us by <strong><a href="https://www.tecmint.com/linux-books-in-pdf-format/" target="_blank">purchasing our premium books</a></strong> in PDF format.</li>
+<li>Support us by taking our <strong><a rel="nofollow" target="_blank" href="https://deals.tecmint.com/search?utf8=%E2%9C%93&amp;query=linux">online Linux courses</a></strong></li>
+</ol>
+<p style="text-align: center;"><strong style=" color:#fe3300;font-size:20px;">We are thankful for your never ending support.</strong></p>
+</div>
+<div class="clear"></div>
+<p class="post-tags"><span>Tags:</span> <a href="https://www.tecmint.com/tag/linux-tricks/" rel="tag">Linux Tricks</a></p> <div class="author-bio">
+<div class="bio-avatar"><img src="https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=128&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=256&amp;d=blank&amp;r=g 2x" class="avatar avatar-128 photo" style="display: block;" data-lazy-loaded="true" width="128" height="128"><noscript><img alt='' src='https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=128&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=256&#038;d=blank&#038;r=g 2x' class='avatar avatar-128 photo' height='128' width='128' /></noscript></div>
+<p style="float:right; font-weight:600;"><a target="_blank" class="author-link" href="https://www.tecmint.com/author/marintodorov89/" rel="author">View all Posts</a></p>
+<p class="bio-name">Marin Todorov</p>
+<p class="bio-desc">I am a bachelor in computer science and a Linux 
+Foundation Certified System Administrator. Currently working as a Senior
+ Technical support in the hosting industry. In my free time I like 
+testing new software and inline skating.</p>
+<p><span style="font-size:20px;font-weight:400;color:#a2042e">Your name can also be listed here. Got a tip? <a style="text-decoration:underline;" target="_blank" href="https://www.tecmint.com/submit-articles/">Submit it here</a> to become an <b>TecMint</b> author.</span></p>
+<div class="clear"></div>
+</div>
+<div class="hr"></div>
+<div class="grid one-fourth">
+<a href="https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/" target="_blank"><img alt="RedHat RHCE and RHCSA Certification Book" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/RedHat-RHCSA-RHCE-Exam-Study-Ebook.png" style="margin-right:10px;" width="200"></a>
+</div>
+<div class="grid one-fourth">
+<a href="https://www.tecmint.com/linux-foundation-lfcs-lfce-certification-exam-book/" target="_blank"><img alt="Linux Foundation LFCS and LFCE Certification Preparation Guide" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/Linux-Foundation-LFCS-LFCE-Certification-Ebook.png" width="200"></a>
+</div>
+<div class="grid one-fourth">
+<a href="https://deals.tecmint.com/sales/complete-linux-crash-course-includes-topics-on-red-hat-unix-kali-python-and-opensuse?utm_source=tecmint.com&amp;utm_medium=referral&amp;utm_campaign=complete-linux-crash-course-includes-topics-on-red-hat-unix-kali-python-and-opensu" rel="nofollow" target="_blank"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/Linux-System-Administrator-Course.png" style="margin-right:10px;" width="200"></a>
+</div>
+<div class="grid one-fourth last">
+<a href="https://deals.tecmint.com/sales/become-an-ethical-hacker-bonus-bundle?utm_source=tecmint.com&amp;utm_medium=referral&amp;utm_campaign=become-an-ethical-hacker-bonus-bundle_090216" rel="nofollow" target="_blank"><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/Become-an-Ethical-Hacker.png" width="200"></a>
+</div>
+<div class="clear"></div>
+<div class="hr"></div>
+<ul class="post-nav group">
+<li class="next"><a href="https://www.tecmint.com/learn-game-development-course/" rel="next"><i class="fa fa-chevron-right"></i><strong>Next story</strong> <span>Deal: Learn Complete Game Developer Course – Build 60 Games $39</span></a></li>
+<li class="previous"><a href="https://www.tecmint.com/install-run-and-delete-applications-inside-docker-containers/" rel="prev"><i class="fa fa-chevron-left"></i><strong>Previous story</strong> <span>How to Install, Run and Delete Applications inside Docker Containers – Part 2</span></a></li>
+</ul>
+<h4 class="heading">
+<i class="fa fa-hand-o-right"></i>You may also like...</h4>
+<ul class="related-posts group">
+<li class="related post-hover">
+<article class="post-12712 post type-post status-publish format-standard has-post-thumbnail hentry category-linux-commands tag-sort-command">
+<div class="post-thumbnail">
+<a href="https://www.tecmint.com/linux-sort-command-examples/" title="7 Interesting Linux ‘sort’ Command Examples – Part 2">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://www.tecmint.com/wp-content/uploads/2015/04/Linux-sort-command-examples-520x245.jpg" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="Linux sort command examples" srcset="https://www.tecmint.com/wp-content/uploads/2015/04/Linux-sort-command-examples-520x245.jpg 520w, https://www.tecmint.com/wp-content/uploads/2015/04/Linux-sort-command-examples-720x340.jpg 720w" sizes="(max-width: 520px) 100vw, 520px" width="520" height="245"><noscript><img width="520" height="245" src="https://www.tecmint.com/wp-content/uploads/2015/04/Linux-sort-command-examples-520x245.jpg" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="Linux sort command examples" srcset="https://www.tecmint.com/wp-content/uploads/2015/04/Linux-sort-command-examples-520x245.jpg 520w, https://www.tecmint.com/wp-content/uploads/2015/04/Linux-sort-command-examples-720x340.jpg 720w" sizes="(max-width: 520px) 100vw, 520px" /></noscript> </a>
+<a class="post-comments" href="https://www.tecmint.com/linux-sort-command-examples/#respond"><span><i class="fa fa-comments-o"></i>0</span></a>
+</div>
+<div class="related-inner">
+<h4 class="post-title">
+<a href="https://www.tecmint.com/linux-sort-command-examples/" rel="bookmark" title="7 Interesting Linux ‘sort’ Command Examples – Part 2">7 Interesting Linux ‘sort’ Command Examples – Part 2</a>
+</h4>
+<div class="post-meta group">
+<p class="post-date">18 Apr, 2015</p>
+</div>
+</div>
+</article>
+</li>
+<li class="related post-hover">
+<article class="post-25623 post type-post status-publish format-standard has-post-thumbnail hentry category-linux-commands tag-linux-tricks">
+<div class="post-thumbnail">
+<a href="https://www.tecmint.com/shutdown-poweroff-halt-and-reboot-commands-in-linux/" title="Understanding Shutdown, Poweroff, Halt and Reboot Commands in Linux">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://www.tecmint.com/wp-content/uploads/2017/05/Understand-Shutdown-Reboot-Linux-Commands.png" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="Understanding Shutdown, Poweroff, Halt and Reboot Commands" width="720" height="340"><noscript><img width="720" height="340" src="https://www.tecmint.com/wp-content/uploads/2017/05/Understand-Shutdown-Reboot-Linux-Commands.png" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="Understanding Shutdown, Poweroff, Halt and Reboot Commands" /></noscript> </a>
+<a class="post-comments" href="https://www.tecmint.com/shutdown-poweroff-halt-and-reboot-commands-in-linux/#comments"><span><i class="fa fa-comments-o"></i>11</span></a>
+</div>
+<div class="related-inner">
+<h4 class="post-title">
+<a href="https://www.tecmint.com/shutdown-poweroff-halt-and-reboot-commands-in-linux/" rel="bookmark" title="Understanding Shutdown, Poweroff, Halt and Reboot Commands in Linux">Understanding Shutdown, Poweroff, Halt and Reboot Commands in Linux</a>
+</h4>
+<div class="post-meta group">
+<p class="post-date">12 May, 2017</p>
+</div>
+</div>
+</article>
+</li>
+<li class="related post-hover">
+<article class="post-13284 post type-post status-publish format-standard has-post-thumbnail hentry category-linux-commands tag-zypper">
+<div class="post-thumbnail">
+<a href="https://www.tecmint.com/zypper-commands-to-manage-suse-linux-package-management/" title="45 Zypper Commands to Manage ‘Suse’ Linux Package Management">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://www.tecmint.com/wp-content/uploads/2015/05/Zypper-Package-Management-in-Suse-520x245.jpg" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="Suse Linux Package Management with Zypper" srcset="https://www.tecmint.com/wp-content/uploads/2015/05/Zypper-Package-Management-in-Suse-520x245.jpg 520w, https://www.tecmint.com/wp-content/uploads/2015/05/Zypper-Package-Management-in-Suse-720x340.jpg 720w" sizes="(max-width: 520px) 100vw, 520px" width="520" height="245"><noscript><img width="520" height="245" src="https://www.tecmint.com/wp-content/uploads/2015/05/Zypper-Package-Management-in-Suse-520x245.jpg" class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="Suse Linux Package Management with Zypper" srcset="https://www.tecmint.com/wp-content/uploads/2015/05/Zypper-Package-Management-in-Suse-520x245.jpg 520w, https://www.tecmint.com/wp-content/uploads/2015/05/Zypper-Package-Management-in-Suse-720x340.jpg 720w" sizes="(max-width: 520px) 100vw, 520px" /></noscript> </a>
+<a class="post-comments" href="https://www.tecmint.com/zypper-commands-to-manage-suse-linux-package-management/#comments"><span><i class="fa fa-comments-o"></i>3</span></a>
+</div>
+<div class="related-inner">
+<h4 class="post-title">
+<a href="https://www.tecmint.com/zypper-commands-to-manage-suse-linux-package-management/" rel="bookmark" title="45 Zypper Commands to Manage ‘Suse’ Linux Package Management">45 Zypper Commands to Manage ‘Suse’ Linux Package Management</a>
+</h4>
+<div class="post-meta group">
+<p class="post-date">11 May, 2015</p>
+</div>
+</div>
+</article>
+</li>
+</ul>
+<section id="comments" class="themeform">
+<h3 class="heading">15 Responses</h3>
+<ul class="comment-tabs group">
+<li class="active"><a href="#commentlist-container"><i class="fa fa-comments-o"></i>Comments<span>15</span></a></li>
+<li><a href="#pinglist-container"><i class="fa fa-share"></i>Pingbacks<span>0</span></a></li>
+</ul>
+<div id="commentlist-container" class="comment-tab">
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="comment-1097877">
+<div id="div-comment-1097877" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/0d7ffbf193ed423f767870d759189dba?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/0d7ffbf193ed423f767870d759189dba?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/0d7ffbf193ed423f767870d759189dba?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/0d7ffbf193ed423f767870d759189dba?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Abhishek Padghan</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-1097877">
+January 29, 2019 at 2:15 am </a>
+</div>
+<p>What if I forgot to mention mklabel in parted will it cause any issues ?</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=1097877#respond" data-commentid="1097877" data-postid="18353" data-belowelement="div-comment-1097877" data-respondelement="respond" aria-label="Reply to Abhishek Padghan">Reply</a></div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1002492">
+<div id="div-comment-1002492" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/dc2ca491e777c6b9e64d1ebc6615b042?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/dc2ca491e777c6b9e64d1ebc6615b042?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/dc2ca491e777c6b9e64d1ebc6615b042?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/dc2ca491e777c6b9e64d1ebc6615b042?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Kier</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-1002492">
+June 8, 2018 at 1:16 am </a>
+</div>
+<p>Do you need free space or unallocated space to resize a partition? i 
+want to resize a partition but all space is allocated to some partitions
+ or another</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=1002492#respond" data-commentid="1002492" data-postid="18353" data-belowelement="div-comment-1002492" data-respondelement="respond" aria-label="Reply to Kier">Reply</a></div>
+</div>
+</li>
+<li class="comment even thread-even depth-1 parent" id="comment-886582">
+<div id="div-comment-886582" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/a6bfca6e3bdf75763f68e9f16e3da399?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/a6bfca6e3bdf75763f68e9f16e3da399?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/a6bfca6e3bdf75763f68e9f16e3da399?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/a6bfca6e3bdf75763f68e9f16e3da399?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Ethan</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-886582">
+April 28, 2017 at 8:54 am </a>
+</div>
+<p>Uhh, before resizepart, don’t you need to run resize2fs first to shrink the data?</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=886582#respond" data-commentid="886582" data-postid="18353" data-belowelement="div-comment-886582" data-respondelement="respond" aria-label="Reply to Ethan">Reply</a></div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="comment-1002494">
+<div id="div-comment-1002494" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/dc2ca491e777c6b9e64d1ebc6615b042?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/dc2ca491e777c6b9e64d1ebc6615b042?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/dc2ca491e777c6b9e64d1ebc6615b042?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/dc2ca491e777c6b9e64d1ebc6615b042?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Kiers</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-1002494">
+June 8, 2018 at 1:18 am </a>
+</div>
+<p>can you provide an example how to embed “resize2fs” in the parted commands shown above? Thanks!</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=1002494#respond" data-commentid="1002494" data-postid="18353" data-belowelement="div-comment-1002494" data-respondelement="respond" aria-label="Reply to Kiers">Reply</a></div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-867082">
+<div id="div-comment-867082" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/cca3ab246e1e4776d2229d21db5f16e1?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/cca3ab246e1e4776d2229d21db5f16e1?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/cca3ab246e1e4776d2229d21db5f16e1?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/cca3ab246e1e4776d2229d21db5f16e1?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Wellington Torrejais da Silva</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-867082">
+February 13, 2017 at 6:14 pm </a>
+</div>
+<p>Thanks!</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=867082#respond" data-commentid="867082" data-postid="18353" data-belowelement="div-comment-867082" data-respondelement="respond" aria-label="Reply to Wellington Torrejais da Silva">Reply</a></div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1 parent" id="comment-810920">
+<div id="div-comment-810920" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/a0a22decd98e7d59f7cb8d5a75e0f7d6?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/a0a22decd98e7d59f7cb8d5a75e0f7d6?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/a0a22decd98e7d59f7cb8d5a75e0f7d6?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/a0a22decd98e7d59f7cb8d5a75e0f7d6?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Henry</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-810920">
+August 30, 2016 at 3:53 am </a>
+</div>
+<p>GNU Parted 3.1<br>
+This version don’t have resizepart command!!</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=810920#respond" data-commentid="810920" data-postid="18353" data-belowelement="div-comment-810920" data-respondelement="respond" aria-label="Reply to Henry">Reply</a></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-admin even depth-2" id="comment-811033">
+<div id="div-comment-811033" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Ravi Saive</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-811033">
+August 30, 2016 at 11:12 am </a>
+</div>
+<p>@Henry,</p>
+<p>Thanks for updating us, but whats the alternative command to resizepart in GNU Parted 3.1?</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=811033#respond" data-commentid="811033" data-postid="18353" data-belowelement="div-comment-811033" data-respondelement="respond" aria-label="Reply to Ravi Saive">Reply</a></div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-781619">
+<div id="div-comment-781619" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/547dd1a24e60973cc4c1471f12b5fb26?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/547dd1a24e60973cc4c1471f12b5fb26?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/547dd1a24e60973cc4c1471f12b5fb26?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/547dd1a24e60973cc4c1471f12b5fb26?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Kumar Nikhil</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-781619">
+May 18, 2016 at 10:08 am </a>
+</div>
+<p>resizepart not working in 2.1 edition. why it so?</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=781619#respond" data-commentid="781619" data-postid="18353" data-belowelement="div-comment-781619" data-respondelement="respond" aria-label="Reply to Kumar Nikhil">Reply</a></div>
+</div>
+<ul class="children">
+<li class="comment even depth-2 parent" id="comment-781688">
+<div id="div-comment-781688" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Marin Todorov</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-781688">
+May 18, 2016 at 1:49 pm </a>
+</div>
+<p>Version 2.1 is an older one and the option in there is called “resize”. See below:</p>
+<p>$ parted -v<br>
+parted (GNU parted) 2.1</p>
+<p>$ parted -h | grep resize<br>
+resize NUMBER START END resize partition NUMBER and its file</p>
+<p>It’s always a good practice to check command’s manual and help list and look for additional options you may need.</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=781688#respond" data-commentid="781688" data-postid="18353" data-belowelement="div-comment-781688" data-respondelement="respond" aria-label="Reply to Marin Todorov">Reply</a></div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-3 parent" id="comment-828661">
+<div id="div-comment-828661" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/9ece2999011b392fe8114b75dd4af0e9?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/9ece2999011b392fe8114b75dd4af0e9?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/9ece2999011b392fe8114b75dd4af0e9?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/9ece2999011b392fe8114b75dd4af0e9?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Matt M.</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-828661">
+October 15, 2016 at 1:28 am </a>
+</div>
+<p>resize and resizepart aren’t included in the RHEL/CentOS versions of parted, for whatever reason.</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=828661#respond" data-commentid="828661" data-postid="18353" data-belowelement="div-comment-828661" data-respondelement="respond" aria-label="Reply to Matt M.">Reply</a></div>
+</div>
+<ul class="children">
+<li class="comment even depth-4" id="comment-1022597">
+<div id="div-comment-1022597" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/16f9635dcbcb7eda7342cba667472374?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/16f9635dcbcb7eda7342cba667472374?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/16f9635dcbcb7eda7342cba667472374?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/16f9635dcbcb7eda7342cba667472374?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Marcin</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-1022597">
+August 10, 2018 at 4:41 pm </a>
+</div>
+<p>For RHEL, resize function was added in version 3.1-29</p>
+<p>* Thu Aug 10 2017 Brian C. Lane – 3.1-29<br>
+– Add support for NVMe devices<br>
+Resolves: rhbz#1316239<br>
+– Backport partition resize command<br>
+Resolves: rhbz#1423357</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=1022597#respond" data-commentid="1022597" data-postid="18353" data-belowelement="div-comment-1022597" data-respondelement="respond" aria-label="Reply to Marcin">Reply</a></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1 parent" id="comment-770631">
+<div id="div-comment-770631" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/9a7bd1e6712ef50443ddb5f386b4243d?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/9a7bd1e6712ef50443ddb5f386b4243d?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/9a7bd1e6712ef50443ddb5f386b4243d?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/9a7bd1e6712ef50443ddb5f386b4243d?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Ino Van Winckel</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-770631">
+April 7, 2016 at 2:44 pm </a>
+</div>
+<p>Hey</p>
+<p>I tried to resize my primary partition and it worked, the only 
+problem i run into now is that linux thinks the whole partition is full 
+but I know it’s all free space… How can I allocate this free space on my
+ HD into the primary partition and use it as free space?</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=770631#respond" data-commentid="770631" data-postid="18353" data-belowelement="div-comment-770631" data-respondelement="respond" aria-label="Reply to Ino Van Winckel">Reply</a></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-marintodorov89 bypostauthor even depth-2" id="comment-770653">
+<div id="div-comment-770653" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/1a488abfc89d7db68797f78d5b66fdb3?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn"><a href="https://www.tecmint.com/" rel="external nofollow" class="url">Marin Todorov</a></cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-770653">
+April 7, 2016 at 4:26 pm </a>
+</div>
+<p>Hello Ino,</p>
+<p>Do you mean that the new partition is showed as allocated? If the 
+whole partition is free, did you try to format it? Alternatively, you 
+may try to run resize2fs on the partition you are resizing and see if 
+this resolves the issue for you.</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=770653#respond" data-commentid="770653" data-postid="18353" data-belowelement="div-comment-770653" data-respondelement="respond" aria-label="Reply to Marin Todorov">Reply</a></div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-748795">
+<div id="div-comment-748795" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/b392248fb8dee50ce37de20d43b4a373?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/b392248fb8dee50ce37de20d43b4a373?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/b392248fb8dee50ce37de20d43b4a373?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/b392248fb8dee50ce37de20d43b4a373?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">Jalal Hajigholamali</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-748795">
+February 7, 2016 at 10:43 am </a>
+</div>
+<p>Hi,<br>
+Very nice article</p>
+<p>Thanks a lot</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=748795#respond" data-commentid="748795" data-postid="18353" data-belowelement="div-comment-748795" data-respondelement="respond" aria-label="Reply to Jalal Hajigholamali">Reply</a></div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-746803">
+<div id="div-comment-746803" class="comment-body">
+<div class="comment-author vcard">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/804c16f030b0a08a3d1134ac87c35241?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/804c16f030b0a08a3d1134ac87c35241?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/804c16f030b0a08a3d1134ac87c35241?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/804c16f030b0a08a3d1134ac87c35241?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> <cite class="fn">K Raghunathan</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#comment-746803">
+February 1, 2016 at 8:58 pm </a>
+</div>
+<p>Useful list of parted functions. Resizing, particularly, needed when os has been updated repeatedly. Thanks</p>
+<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/?replytocom=746803#respond" data-commentid="746803" data-postid="18353" data-belowelement="div-comment-746803" data-respondelement="respond" aria-label="Reply to K Raghunathan">Reply</a></div>
+</div>
+</li>
+</ol>
+</div>
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Got something to say? Join the discussion. <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.tecmint.com/parted-command-to-create-resize-rescue-linux-disk-partitions/#respond" style="display:none;">Cancel reply</a></small></h3> <form action="https://www.tecmint.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="comment-form-subscriptions"><label for="subscribe-reloaded"><input style="width:30px" type="checkbox" name="subscribe-reloaded" id="subscribe-reloaded" value="yes"> Notify me of followup comments via e-mail. You can also <a href="https://www.tecmint.com/comment-subscriptions/?srp=18353&amp;srk=0b81c0e99cc43eb9ade2ba1b6ab240b4&amp;sra=s&amp;srsrc=f">subscribe</a> without commenting.</label></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="18353" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b649207eae"></p><p style="display: none;"></p> <input type="hidden" id="ak_js" name="ak_js" value="1568666382617"></form>
+</div>
+<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+</section>
+</div>
+</section>
+<div class="sidebar s1">
+<a class="sidebar-toggle" title="Expand Sidebar"><i class="fa icon-sidebar-toggle"></i></a>
+<div class="sidebar-content">
+<div class="sidebar-top group">
+<span style="color:#002873; font-weight:600; font-size:20px;">I <i class="fa fa-heart col-love-l"></i> TecMint :</span>
+<ul class="social-links"><li><a rel="nofollow" class="social-tooltip" title="twitter" href="https://twitter.com/tecmint" target="Array"><i class="fa fa-twitter" style="color: #33ccff;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="facebook" href="https://www.facebook.com/TecMint" target="Array"><i class="fa fa-facebook" style="color: #3b5998;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Google+" href="https://plus.google.com/101049688653487009744" target="Array"><i class="fa fa-google-plus" style="color: #db4a39;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Feedly" href="https://feedly.com/i/subscription/feed/https://www.tecmint.com/feed/" target="Array"><i class="fa fa-rss" style="color: #87c040;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Youtube" href="https://www.youtube.com/channel/UCkiRkzdLvoGBtW_YArytJlQ" target="Array"><i class="fa fa fa-youtube-square" style="color: #c4302b;"></i></a></li></ul> </div>
+<div id="text-23" class="widget widget_text"> <div class="textwidget"> <div style="background:#db4455;" class="message">
+<center><a href="https://www.tecmint.com/free-online-linux-learning-guide-for-beginners/" target="_blank" rel="noopener noreferrer"><span style="font-weight:bold;font-size:18px;"><i class="fa fa-linux"></i> BEGINNER'S GUIDE FOR LINUX <i class="fa fa-linux"></i></span> <span style="font-weight:bold;font-size:16px;">Start learning Linux in minutes</span> <i class="fa fa-arrow-right"></i></a>
+</center>
+</div></div>
+</div><div id="text-21" class="widget widget_text"> <div class="textwidget"><center>
+
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="7270921771"></ins>
+<script type="text/javascript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center></div>
+</div><div id="text-25" class="widget widget_text"> <div class="textwidget"><div class="message"><center><a href="https://www.tecmint.com/vi-editor-usage/" target="_blank" rel="noopener noreferrer"><span style="font-weight:bold;font-size:17px;"><i class="fa fa-linux"></i> Vi/Vim Editor BEGINNER'S GUIDE <i class="fa fa-linux"></i></span> <span style="font-weight:bold;font-size:16px;">Learn vi/vim as a Full Text Editor</span> <i class="fa fa-file-text"></i>
+</a></center></div></div>
+</div><div id="text-24" class="widget widget_text"> <div class="textwidget">
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="8362602806"></ins>
+<script type="text/javascript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div><div id="text-26" class="widget widget_text"> <div class="textwidget"><div class="message" style="background-color: #ab0619;"><center><span style="font-weight:bold;font-size:17px;"><i class="fa fa-linux"></i> Linux Foundation Certification <i class="fa fa-linux"></i></span> <span style="font-weight:bold;font-size:16px;">Exam Study Guide to <a style="text-decoration:underline;" target="_blank" href="https://www.tecmint.com/linux-foundation-lfcs-lfce-certification-exam-book/" rel="noopener noreferrer">LFCS and LFCE</a></span></center></div></div>
+</div><div id="alxtabs-3" class="widget widget_alx_tabs">
+<ul class="alx-tabs-nav group tab-count-2"><li class="alx-tab tab-popular active"><a href="#tab-popular" title="Popular Posts"><i class="fa fa-star"></i><span>Popular Posts</span></a></li><li class="alx-tab tab-comments"><a href="#tab-comments" title="Recent Comments"><i class="fa fa-comments-o"></i><span>Recent Comments</span></a></li></ul>
+<div class="alx-tabs-container">
+<ul id="tab-popular" class="alx-tab group " style="display: block;">
+<li>
+<div class="tab-item-inner group">
+<p class="tab-item-title"><a href="https://www.tecmint.com/how-to-add-linux-host-to-nagios-monitoring-server/" rel="bookmark" title="How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin">How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin</a></p>
+</div>
+</li>
+<li>
+<div class="tab-item-inner group">
+<p class="tab-item-title"><a href="https://www.tecmint.com/install-nagios-in-linux/" rel="bookmark" title="How to Install Nagios 4.3.4 on RHEL, CentOS and Fedora">How to Install Nagios 4.3.4 on RHEL, CentOS and Fedora</a></p>
+</div>
+</li>
+<li>
+<div class="tab-item-inner group">
+<p class="tab-item-title"><a href="https://www.tecmint.com/install-cacti-network-monitoring-on-rhel-centos-6-3-5-8-and-fedora-17-12/" rel="bookmark" title="Install Cacti (Network Monitoring) on RHEL/CentOS 7.x/6.x/5.x and Fedora 24-12">Install Cacti (Network Monitoring) on RHEL/CentOS 7.x/6.x/5.x and Fedora 24-12</a></p>
+</div>
+</li>
+<li>
+<div class="tab-item-inner group">
+<p class="tab-item-title"><a href="https://www.tecmint.com/install-google-chrome-on-redhat-centos-fedora-linux/" rel="bookmark" title="How to Install Google Chrome 75 On RHEL/CentOS 7 and Fedora 30">How to Install Google Chrome 75 On RHEL/CentOS 7 and Fedora 30</a></p>
+</div>
+</li>
+<li>
+<div class="tab-item-inner group">
+<p class="tab-item-title"><a href="https://www.tecmint.com/install-ubuntu-alongside-with-windows-dual-boot/" rel="bookmark" title="How to Install Ubuntu Alongside With Windows 10 or 8 in Dual-Boot">How to Install Ubuntu Alongside With Windows 10 or 8 in Dual-Boot</a></p>
+</div>
+</li>
+</ul>
+<ul id="tab-comments" class="alx-tab group avatars-enabled" style="display: none;">
+<li>
+<div class="tab-item-avatar">
+<a href="https://www.tecmint.com/install-python-in-ubuntu/comment-page-1/#comment-1243095">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/ca8bbb290624e28bb57673689998988c?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/ca8bbb290624e28bb57673689998988c?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/ca8bbb290624e28bb57673689998988c?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/ca8bbb290624e28bb57673689998988c?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> </a>
+</div>
+<div class="tab-item-inner group">
+<div class="tab-item-name">Afsal says:</div>
+<div class="tab-item-comment"><a href="https://www.tecmint.com/install-python-in-ubuntu/comment-page-1/#comment-1243095">I have changed the symlink to python3 from python3.5 to python3.6,...</a></div>
+</div>
+</li>
+<li>
+<div class="tab-item-avatar">
+<a href="https://www.tecmint.com/best-linux-ide-editors-source-code-editors/comment-page-5/#comment-1242976">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1x1.gif" data-lazy-src="https://secure.gravatar.com/avatar/419255fc876ffb047e6c40065571f665?s=96&amp;d=blank&amp;r=g" alt="" srcset="https://secure.gravatar.com/avatar/419255fc876ffb047e6c40065571f665?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/419255fc876ffb047e6c40065571f665?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/419255fc876ffb047e6c40065571f665?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> </a>
+</div>
+<div class="tab-item-inner group">
+<div class="tab-item-name">Rick Stanley says:</div>
+<div class="tab-item-comment"><a href="https://www.tecmint.com/best-linux-ide-editors-source-code-editors/comment-page-5/#comment-1242976">I have been in this business since 1986, and have taught...</a></div>
+</div>
+</li>
+<li>
+<div class="tab-item-avatar">
+<a href="https://www.tecmint.com/linux-foundation-lfcs-lfce-certification-exam-book/comment-page-6/#comment-1242896">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/e9a3b757a39afd3994cb56a1ad5fd5f2.png" alt="" srcset="https://secure.gravatar.com/avatar/e9a3b757a39afd3994cb56a1ad5fd5f2?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" style="display: block;" data-lazy-loaded="true" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/e9a3b757a39afd3994cb56a1ad5fd5f2?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/e9a3b757a39afd3994cb56a1ad5fd5f2?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> </a>
+</div>
+<div class="tab-item-inner group">
+<div class="tab-item-name">Stefan Van den Heuvel says:</div>
+<div class="tab-item-comment"><a href="https://www.tecmint.com/linux-foundation-lfcs-lfce-certification-exam-book/comment-page-6/#comment-1242896">@Ravi, I received the ebooks now :) Thank you very much...</a></div>
+</div>
+</li>
+<li>
+<div class="tab-item-avatar">
+<a href="https://www.tecmint.com/open-source-artificial-intelligence-tools-softwares-linux/comment-page-1/#comment-1242831">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/f70114b59f3c2ac629f311e337974124.png" alt="" srcset="https://secure.gravatar.com/avatar/f70114b59f3c2ac629f311e337974124?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" style="display: block;" data-lazy-loaded="true" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/f70114b59f3c2ac629f311e337974124?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/f70114b59f3c2ac629f311e337974124?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> </a>
+</div>
+<div class="tab-item-inner group">
+<div class="tab-item-name">Friar Tux says:</div>
+<div class="tab-item-comment"><a href="https://www.tecmint.com/open-source-artificial-intelligence-tools-softwares-linux/comment-page-1/#comment-1242831">While I enjoyed this article, I would love to see some...</a></div>
+</div>
+</li>
+<li>
+<div class="tab-item-avatar">
+<a href="https://www.tecmint.com/linux-online-training-courses/comment-page-5/#comment-1242783">
+<img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/1b0323f88de5b02137b3ef70d1025d71.png" alt="" srcset="https://secure.gravatar.com/avatar/1b0323f88de5b02137b3ef70d1025d71?s=192&amp;d=blank&amp;r=g 2x" class="avatar avatar-96 photo" style="display: block;" data-lazy-loaded="true" width="96" height="96"><noscript><img alt='' src='https://secure.gravatar.com/avatar/1b0323f88de5b02137b3ef70d1025d71?s=96&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/1b0323f88de5b02137b3ef70d1025d71?s=192&#038;d=blank&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' /></noscript> </a>
+</div>
+<div class="tab-item-inner group">
+<div class="tab-item-name">shiva says:</div>
+<div class="tab-item-comment"><a href="https://www.tecmint.com/linux-online-training-courses/comment-page-5/#comment-1242783">I am interest in these course, but i am prepare online...</a></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="text-27" class="widget widget_text"> <div class="textwidget"><center>
+<a target="_blank" href="https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/" rel="noopener noreferrer"><img alt="RedHat RHCSA and RHCE Certification Exam Study Ebook" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/RedHat-RHCSA-RHCE-Exam.png"></a>
+</center></div>
+</div><div id="text-28" class="widget widget_text"> <div class="textwidget"><div class="message" style="background-color: #0d7c39;"><center><p style="font-weight:bold;font-size:18px;">Linux System Administrator Bundle with 7-Courses (96% off)</p>
+<p style="background-color: #03441d;margin:6px 35px;padding:10px;"><a rel="nofollow noopener noreferrer" target="_blank" href="https://deals.tecmint.com/sales/complete-linux-crash-course-includes-topics-on-red-hat-unix-kali-python-and-opensuse?utm_source=tecmint.com&amp;utm_medium=referral&amp;utm_campaign=complete-linux-crash-course-includes-topics-on-red-hat-unix-kali-python-and-opensu&amp;_ga=1.95416024.550662903.1451974395" style="font-size:25px;font-weight:bold;">Add to Cart - $69</a></p>
+<p style="font-size:14px;font-weight:bold;"><i aria-hidden="true" class="fa fa-clock-o"></i> Ending In: 3 days
+</p></center></div>
+<div style="background-color: #f4403b;" class="message"><center><p style="font-weight:bold;font-size:18px;">Computer Hacker Professional Certification Course (96% Off)</p>
+<p style="background-color: #9d1815;margin:6px 35px;padding:10px;"><a style="font-size:25px;font-weight:bold;" href="https://deals.tecmint.com/sales/computer-hacker-professional-certification-package-2" target="_blank" rel="nofollow noopener noreferrer">Add to Cart - $59</a></p>
+<p style="font-size:14px;font-weight:bold;"><i class="fa fa-clock-o" aria-hidden="true"></i> Ending In: 4 days
+</p></center></div></div>
+</div><div id="text-4" class="widget widget_text"><h3>Linux eBooks</h3> <div class="textwidget"><ol class="custom-counter">
+<li><a onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Learn Linux in One Week','TecMint')" href="https://www.tecmint.com/learn-linux-in-one-week/" target="_blank" rel="noopener noreferrer">Introducing Learn Linux In One Week and Go from Zero to Hero</a></li>
+<li><a onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','RedHat RHCE/RHCSA Guide','TecMint')" href="https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/" target="_blank" rel="noopener noreferrer">RedHat RHCE/RHCSA Certification Preparation Guide</a></li>
+<li><a onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Linux Foundation LFCS/LFCE Guide','TecMint')" href="https://www.tecmint.com/linux-foundation-lfcs-lfce-certification-exam-book/" target="_blank" rel="noopener noreferrer">Linux Foundations LFCS/LFCE Certification Guide</a></li>
+<li><a onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Postfix Mail Server Setup','TecMint')" href="https://www.tecmint.com/postfix-mail-server-setup-linux-book/" target="_blank" rel="noopener noreferrer">Postfix Mail Server Setup Guide for Linux</a></li>
+<li><a onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Ansible Setup Guide','TecMint')" href="https://www.tecmint.com/ansible-book-guide-for-linux/" target="_blank" rel="noopener noreferrer">Ansible Setup Guide for Linux</a></li>
+<li><a onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Django Setup Guide','TecMint')" href="https://www.tecmint.com/django-web-framework-book/" target="_blank" rel="noopener noreferrer">Django Setup Guide for Linux</a></li>
+<li><a onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Awk Guide for Beginners','TecMint')" href="https://www.tecmint.com/linux-awk-command-book-for-beginners/" target="_blank" rel="noopener noreferrer">Awk Getting Started Guide for Beginners</a></li>
+<li><a onclick="if (!window.__cfRLUnblockHandlers) return false; ga('send','event','Citrix XenServer Setup Guide','TecMint')" href="https://www.tecmint.com/citrix-xenserver-book-for-linux/" target="_blank" rel="noopener noreferrer">Citrix XenServer Setup Guide for Linux</a></li>
+</ol></div>
+</div><div id="text-29" class="widget widget_text"> <div class="textwidget"><div style="background-color: rgb(25, 67, 87); color: rgb(255, 255, 255); border-radius: 5px; text-align: center; padding: 10px;">
+<div class="follow-subscribe-social">
+<ul>
+<li><a href="https://twitter.com/tecmint" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.facebook.com/TecMint" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://plus.google.com/101049688653487009744" target="_blank" rel="noopener noreferrer"><i class="fa fa-google"></i></a></li>
+<li><a href="https://www.youtube.com/channel/UCkiRkzdLvoGBtW_YArytJlQ" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a></li>
+<li><a href="https://www.linkedin.com/company/tecmint" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
+</ul>
+</div>
+<p style="font-weight: bold; font-size: 20px; margin-bottom: 10px; margin-top: 10px;">Never Miss Any Linux Tutorials, Guides, Tips and Free eBooks</p>
+<p>Join Our Community Of <strong style="color:#fff;font-weight:bold;">150,000+ Linux Lovers</strong> and get a weekly newsletter in your inbox</p>
+<p style="background-color: rgb(0, 0, 0); border-radius: 5px; padding: 6px;"><a style="font-size:20px;font-weight:bold;color:#fff;" href="http://subscribe.tecmint.com/newsletter" target="_blank" rel="nofollow noopener noreferrer">YES! SIGN ME UP</a></p></div></div>
+</div><div id="text-32" class="widget widget_text"> <div class="textwidget"><p><br>
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-2601749019656699" data-ad-slot="9838765188"></ins><br>
+<script type="text/javascript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer id="footer">
+<section class="container" id="footer-ads">
+<div class="container-inner">
+<div id="text-30" class="widget widget_text"> <div class="textwidget"><p></p><center><script type="text/javascript">
+var total_images = 2;
+var random_number = Math.floor((Math.random()*total_images));
+var random_img = new Array();
+random_img[0] = '<a target="_blank" rel="nofollow noopener noreferrer" href="https://shareasale.com/r.cfm?b=1226423&#038;u=1260899&#038;m=59485&#038;urllink=&#038;afftrack="><img src="https://www.fossmint.com/wp-content/themes/fossmint/backupads/Linux-Foundation-LFCS-Certification.png"/></a>';
+random_img[1] = '<a target="_blank" rel="nofollow noopener noreferrer" href="https://shareasale.com/r.cfm?b=1226424&#038;u=1260899&#038;m=59485&#038;urllink=&#038;afftrack="><img src="https://www.fossmint.com/wp-content/themes/fossmint/backupads/Linux-Foundation-LFCE-Certification.png"/></a>';
+document.write(random_img[random_number]);
+</script><a target="_blank" rel="nofollow noopener noreferrer" href="https://shareasale.com/r.cfm?b=1226424&amp;u=1260899&amp;m=59485&amp;urllink=&amp;afftrack="><img src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/Linux-Foundation-LFCE-Certification.png"></a></center><p></p>
+</div>
+</div> </div>
+</section>
+<section class="container" id="footer-widgets">
+<div class="container-inner">
+<div class="pad group">
+<div class="footer-widget-1 grid one-third ">
+<div id="alxposts-3" class="widget widget_alx_posts">
+<h3>Linux Monitoring Tools</h3>
+<ul class="alx-posts group ">
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/nethogs-monitor-per-process-network-bandwidth-usage-in-real-time/" rel="bookmark" title="NetHogs – Monitor Per Process Network Bandwidth Usage in Real Time">NetHogs – Monitor Per Process Network Bandwidth Usage in Real Time</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/sarg-squid-analysis-report-generator-and-internet-bandwidth-monitoring-tool/" rel="bookmark" title="SARG – Squid Analysis Report Generator and Internet Bandwidth Monitoring Tool">SARG – Squid Analysis Report Generator and Internet Bandwidth Monitoring Tool</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/shell-script-to-send-email-alert-when-memory-low/" rel="bookmark" title="A Shell Script to Send Email Alert When Memory Gets Low">A Shell Script to Send Email Alert When Memory Gets Low</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/install-and-configure-zabbix-agents-on-centos-redhat-and-debian/" rel="bookmark" title="How to Install and Configure Zabbix Agents on Remote Linux Systems – Part 3">How to Install and Configure Zabbix Agents on Remote Linux Systems – Part 3</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/" rel="bookmark" title="How to Setup Central Logging Server with Rsyslog in Linux">How to Setup Central Logging Server with Rsyslog in Linux</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="footer-widget-2 grid one-third ">
+<div id="alxposts-4" class="widget widget_alx_posts">
+<h3>Linux Interview Questions</h3>
+<ul class="alx-posts group ">
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/linux-rpm-package-management-interview-questions/" rel="bookmark" title="Shilpa Nair Shares Her Interview Experience on RedHat Linux Package Management">Shilpa Nair Shares Her Interview Experience on RedHat Linux Package Management</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/mysql-advance-interview-questions/" rel="bookmark" title="11 Advance MySQL Database “Interview Questions and Answers” for Linux Users">11 Advance MySQL Database “Interview Questions and Answers” for Linux Users</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/apache-interview-questions/" rel="bookmark" title="25 Apache Interview Questions for Beginners and Intermediates">25 Apache Interview Questions for Beginners and Intermediates</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/squid-interview-questions/" rel="bookmark" title="10 Useful “Squid Proxy Server” Interview Questions and Answers in Linux">10 Useful “Squid Proxy Server” Interview Questions and Answers in Linux</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/networking-interview-questions/" rel="bookmark" title="10 Basic Interview Questions and Answers on Linux Networking – Part 1">10 Basic Interview Questions and Answers on Linux Networking – Part 1</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="footer-widget-3 grid one-third last">
+<div id="alxposts-5" class="widget widget_alx_posts">
+<h3>Open Source Tools</h3>
+<ul class="alx-posts group ">
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/microsoft-office-alternatives-for-linux/" rel="bookmark" title="16 Most Used Microsoft Office Alternatives for Linux">16 Most Used Microsoft Office Alternatives for Linux</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/best-linux-twitter-clients/" rel="bookmark" title="9 Best Twitter Clients for Linux That You Will Love to Use">9 Best Twitter Clients for Linux That You Will Love to Use</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/linux-tools-to-monitor-disk-partition-usage/" rel="bookmark" title="9 Tools to Monitor Linux Disk Partitions and Usage in Linux">9 Tools to Monitor Linux Disk Partitions and Usage in Linux</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/ccleaner-alternatives-for-ubuntu/" rel="bookmark" title="6 Best CCleaner Alternatives for Ubuntu">6 Best CCleaner Alternatives for Ubuntu</a></p>
+</div>
+</li>
+<li>
+<div class="post-item-inner group">
+<p class="post-item-title"><a href="https://www.tecmint.com/best-rss-feed-readers-for-linux/" rel="bookmark" title="14 Best RSS Feed Readers for Linux in 2018">14 Best RSS Feed Readers for Linux in 2018</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<nav class="nav-container group" id="nav-footer">
+<div class="nav-toggle"><i class="fa fa-bars"></i></div>
+<div class="nav-text"></div>
+<div class="nav-wrap"><ul id="menu-footer" class="nav container group"><li id="menu-item-18572" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18572"><a href="https://www.tecmint.com/donate-to-tecmint/">Donate to TecMint</a></li>
+<li id="menu-item-10437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10437"><a href="https://www.tecmint.com/contact-us/">Contact Us</a></li>
+<li id="menu-item-10442" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10442"><a href="https://www.tecmint.com/advertise/">Advertise on TecMint</a></li>
+<li id="menu-item-10441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10441"><a href="https://www.tecmint.com/services/">Linux Services</a></li>
+<li id="menu-item-10435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10435"><a href="https://www.tecmint.com/copyright-policy/">Copyright Policy</a></li>
+<li id="menu-item-10436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10436"><a href="https://www.tecmint.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-13339" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13339"><a href="https://www.tecmint.com/career/">Career</a></li>
+<li id="menu-item-24288" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24288"><a href="https://www.tecmint.com/sponsored-post-guidelines-tecmint/">Sponsored Post</a></li>
+</ul></div>
+</nav>
+<section class="container" id="footer-bottom">
+<div class="container-inner">
+<a id="back-to-top" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="pad group">
+<div class="grid one-half">
+<div id="copyright">
+<p>Tecmint: Linux Howtos, Tutorials &amp; Guides © 2019. All Rights Reserved.</p>
+<p>The material in this site cannot be republished either online or offline, without our permission.</p>
+<p>Hosting Sponsored by : <a style="font-weight:bold;color:yellow;" href="https://www.linode.com/?r=64ebb9f723fed8b32fda84b6594006df08ad24b6" target="_blank" rel="nofollow">Linode Cloud Hosting</a></p>
+</div>
+</div>
+<div class="grid one-half last">
+<ul class="social-links"><li><a rel="nofollow" class="social-tooltip" title="twitter" href="https://twitter.com/tecmint" target="Array"><i class="fa fa-twitter" style="color: #33ccff;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="facebook" href="https://www.facebook.com/TecMint" target="Array"><i class="fa fa-facebook" style="color: #3b5998;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Google+" href="https://plus.google.com/101049688653487009744" target="Array"><i class="fa fa-google-plus" style="color: #db4a39;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Feedly" href="https://feedly.com/i/subscription/feed/https://www.tecmint.com/feed/" target="Array"><i class="fa fa-rss" style="color: #87c040;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Youtube" href="https://www.youtube.com/channel/UCkiRkzdLvoGBtW_YArytJlQ" target="Array"><i class="fa fa fa-youtube-square" style="color: #c4302b;"></i></a></li></ul> </div>
+</div>
+</div>
+</section>
+</footer>
+</div>
+<script type="text/javascript" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/jquery_002.js"></script>
+<script type="text/javascript" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/light.js"></script>
+<script type="text/javascript" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/scripts.js"></script>
+<script type="text/javascript" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/jquery_003.js"></script>
+<script type="text/javascript" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/comment-reply.js"></script>
+<script type="text/javascript" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/jquery.js"></script>
+<script type="text/javascript" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/lazy-load.js"></script>
+<script async="async" type="text/javascript" src="8%20Linux%20'Parted'%20Commands%20to%20Create,%20Resize%20and%20Rescue%20Disk%20Partitions_files/form.js"></script>
+<!--[if lt IE 9]>
+<script src="https://www.tecmint.com/wp-content/themes/tecmint/js/ie/respond.js"></script>
+<![endif]-->
+<div class="fixedBar">
+<div class="boxfloat">
+<ul id="tips">
+<li><a href="https://www.tecmint.com/51-useful-lesser-known-commands-for-linux-users/">51 Useful Lesser Known Commands for Linux Users</a></li>
+<li><a href="https://www.tecmint.com/linux-server-hardening-security-tips/">25 Hardening Security Tips for Linux Servers</a></li>
+<li><a href="https://www.tecmint.com/60-commands-of-linux-a-guide-from-newbies-to-system-administrator/">60 Commands of Linux : A Guide from Newbies to System Administrator</a></li>
+<li><a href="https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/">20 Command Line Tools to Monitor Linux Performance</a></li>
+<li><a href="https://www.tecmint.com/18-tar-command-examples-in-linux/">18 Tar Command Examples in Linux</a></li>
+<li><a href="https://www.tecmint.com/20-linux-yum-yellowdog-updater-modified-commands-for-package-mangement/">20 Linux YUM (Yellowdog Updater, Modified) Commands</a></li>
+<li><a href="https://www.tecmint.com/useful-basic-commands-of-apt-get-and-apt-cache-for-package-management/">25 Useful Basic Commands of APT-GET and APT-CACHE</a></li>
+<li><a href="https://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/">20 Funny Commands of Linux or Linux is Fun in Terminal</a></li>
+<li><a href="https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/">Ebook: Introducing the RHCSA and RHCE Exam Preparation Guide</a></li>
+<li><a href="https://www.tecmint.com/sed-command-to-create-edit-and-manipulate-files-in-linux/">Preparation for the LFCS (Linux Foundation Certified SysAdmin) Exam</a></li>
+<li style="display: list-item;"><a href="https://www.tecmint.com/installing-network-services-and-configuring-services-at-system-boot/">Preparation for the LFCE (Linux Foundation Certified Engineer) Exam</a></li>
+<li><a href="https://www.tecmint.com/10-useful-free-linux-ebooks-for-newbies-and-administrators/">10 Useful Free Linux eBooks for Newbies and Administrators</a></li>
+<li><a href="https://www.tecmint.com/free-linux-shell-scripting-books/">4 Free Shell Scripting eBooks for Newbies and Administrators</a></li>
+</ul>
+</div>
+</div>
+
+</body></html>
