@@ -1,0 +1,2 @@
+_pa.setPartners({opx:true})
+_pa.looperReady()
