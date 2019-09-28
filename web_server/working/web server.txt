@@ -246,7 +246,7 @@ we can give it a name using the /etc/hosts file.
 then we can access the website locally using the name "www.example.com"
 
 
-	acess the website extarnaly:
+	access the website extarnaly:
 	---------------------------
 	we can access this same website from the other machine .if the ip address is in the same subnet.we can just access the web site by putting the ip address.but in this case using the name "www.example.com" does not help because in the other machine .because nothing telling the other machine that "www.example.com" is the ip address of the perticular computer.we can also resolve it by putting the same name in the hosts file.
 
