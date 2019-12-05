@@ -1,0 +1,77 @@
+1) question1
+
+The Linux servers will be composed of web servers, user servers, log servers and database servers(we didn't talk about this in the course, however, remember that no matter what type of server that you are building, security still needs to be put in place.)
+
+first we need to install the servers for the web server i will install the apache server 
+
+1) For hardening the security i use SSL for https  
+
+2) open the apache.conf file and disable the modules that is no longer needed
+
+3) remove the server signeture and also the server token so the other people cant find what os and what type os server company using.
+
+4) run the apache web server with a different account 
+
+5)disable the directoy listing 
+
+for user server 
+
+1) use PAM to authenticate if they are  in active directory a
+
+2) centralize log using Rsyslog 
+
+3) use  a cron job and force the user and warn using "chage" tools to update their password
+
+
+
+for database server 
+
+1) use the mariadb SQL server 
+
+2)after the installation i apply the firewall and restrict the public for direct access 
+
+3)change the default port 
+
+4) apply the  "mysql_secure_installation" pocess to disallow root access and apply password for accessing the database server and use the separate user for runnig the mysql server
+
+5) wille enable mail functionality inthe cron job so i can get the log messgage regularly
+
+
+2)You will have teams/groups of employees of the following: Sales, Software Development, Accounting, and Information Technology 
+
+
+i will make groups in the server for the Sales Software Development accounting and IT and create the users add the users to the specfic group that they are belongs to and apply the group permission to them so they can access the resources that is only avilable to the perticular group.for that i will apply firewall and and disallow the root login to the system.and keep logging the service and process they are using
+
+
+
+3)For auditing purposes, the person that joins workstations into the systems uses three different accounts: one account for the IT department, and one account for each of the remaining departments.
+
+
+the person that come for auditing purpose a user account will be created and he will be adde to each of the group with the permission and he can see the log message that created with the specfic group and give access to the specfic tools that is necessary for audeting  .he will get access to watch the file access 
+monitor system calls ,recording system commands and security events and he will get  a eveveted privileges to monitor the traffics
+
+
+
+
+4)There are local administrators for each of the departments, excluding the IT. These local administrators will use the local administrator account on each department. These local administrators will use a local account in each department for purposes of installing applications, updating/patching software, etc. This local account is not the root account, but a user account that is member of the administrators group.
+
+
+
+for the local administration i willl add the local administrator account to the sudoers file so they will get access to monitor and perform administration and install application  and update and patch for the different group with their own user password. and their user account all will be in the administrator group with eleveted privileges 
+
+
+
+5) The Sales and Software Development departments have websites. They must be able to communicate to each other, but not be publicly. There is a main company website however.
+
+
+
+for deticated website there are support in the apache web server i make  a deticated httpd config with specfic user and group in different sub domain for department based website and the company main website will be in the root domain with access to them both
+and the users in will be added in the httpd group so they can share and communicate with each other
+
+
+
+6)The Software development team has to have a development space on the internal network. )They use Linux servers as their platform for development so they must have their own space, but they expect the server to be secure.
+
+for secire development space the best preactive is to use KVM and make a virtual environment inside the server so it wont affect the main server and also restricted user access controll to the virtual server and we use the PAM module to restrict the access to the environment and disable to all unnecessary port so nobody can sneak out the server. and the last we use the password less login like public and private key pair to use this access this environment so other people who dont have access cant login
+
+
