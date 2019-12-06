@@ -46,3 +46,28 @@ partition can be formatted using this following command
 
 
 you can use the gparted tools for the partition
+
+
+
+
+make partitions 
+
+1) first see the block devices using the 
+=>lsblk 
+
+2) fdisk /dev/sd[your block device name]
+
+3) press m for help [it will show all the possible commands]
+
+4) p means print all the partition
+
+5) n for new
+	-> select the primary
+	-> take defaut
+	-> add the size with +5G for 5 gigabyte [your choice]
+	-> then 'L' for the partition type
+	-> 83 is the standerd linux partiotion
+	-> write change the 'w'
+	-> partprobe <partition> to activate it
+
+6) add the file system mkfs.ext4 <partition>
