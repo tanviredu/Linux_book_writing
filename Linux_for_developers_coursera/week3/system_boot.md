@@ -107,3 +107,111 @@ now it will give you the login shell now after login type:
 this will show the graphical login screen
 
 now you can type the username and login credential in the graphical interface to go on
+
+
+
+
+						system initalization
+
+
+after the boot process to make the operating system to fully oprating state the system runs a command called 
+
+init located at
+
+=> /sbin/init
+
+it define the user lavel process or task that runs on the system and continuous to run untill the system shutdown
+
+-> although user can controll it and it is considered as  a user process but still some processs run directly from the kernel
+
+inti coordinates the later part of the booting process 
+after init stated it handles all the boot process it set the login process and set all the environment and start all the process tht is needed and terminate if it is not used
+
+basically all the distribution based on the UNIX process uses SYSVinit in unix
+
+the main concern of the init that runone process after another to make things right
+in the SysVinit booting type does not given prefrence cause they were designed for the mainframe computer
+
+
+
+new method insted of SysVinit
+
+1) upstart
+2) systemd
+
+
+1) upstart is developed by the ubuntu and included in the 6.0 release make it default in 9.10
+adopted by the fedora centos and Oracle Linux and openSUse
+and also used in various embedded devices
+
+2) systemd comes in 2011 in fedora
+
+now a days all the major system uses it and even ubuntu change the upstart to the systemd
+upstart is obsolite and the SysVinit no longer exisst
+
+for system controll we use systemctl
+
+system runlavel
+
+	runlevel			meaning
+-----------			---------------
+
+	0					shutdown/halt
+	1					single user mode
+	2					multi user mode with text and no NFS
+	3					multiuser with NFS and network
+	4					not used
+	5					multiuser network NFS GUI (default)
+	6					Reboot
+
+
+to find a  runlevel in a centos system the command 
+
+=> runlevel
+
+
+when the init command is used it looks the 
+
+'/etc/inittab' file [we no longer use the inittab]
+and it tells you which scrupt to run and the file that is told by the inittab bring the system each runlevel and it is done with series of lines
+
+
+inittab syntax is like
+
+id:<runlevel>:<action>:<process>
+
+1)id : a unique 1-4 character for the entry
+2) runlevel number
+3) action : describe which action is taken
+4) proces : says which process should be executed
+
+
+
+but now there is only one command thats in the inittab file
+
+=>id:5:initdefault
+
+that the multiuser with network and the GUI
+
+you can change the runlevel with
+
+=> telinit <number>
+
+commnad
+
+
+
+to go to the text mode there are two different way
+
+=>sudo telinit 3
+
+or just stop the GUI
+
+=>sudo systemctl stop gdm
+
+and to go to the process agin we start the GUI
+
+=>sudo systemctl start gdm
+
+or
+=>telinit 5
