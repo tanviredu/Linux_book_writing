@@ -1,5 +1,8 @@
 # Linux_book_writing
 # you have to follow the fluent python book for basic and andvance 
+# Follow everything from this
+
+[write book with this link] (https://www.geeksforgeeks.org/python-programming-language/)
 # and al the other for writing this book
 # the fluent python and other books are already in thsi repo
 
